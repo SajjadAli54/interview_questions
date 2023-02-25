@@ -1,12 +1,23 @@
+import java.util.Arrays;
+
 public class Car {
-    private CarMake make;
-    private CarModel model;
-    private BodyType bodyType;
-    private EngineType engineType;
-    private EngineCC engineCC;
-    private String color;
-    private Transmission transmission;
-    private CarFeatures[] features;
+    private CarMake make = CarMake.AUDI;
+    private CarModel model = CarModel.A4;
+    private BodyType bodyType = BodyType.SEDAN;
+    private EngineType engineType = EngineType.V4;
+    private EngineCC engineCC = EngineCC.CC_1000;
+    private String color = "RED";
+    private Transmission transmission = Transmission.AUTO;
+    private CarFeatures[] features = new CarFeatures[]{
+        CarFeatures.ABS,
+        CarFeatures.AIRBAGS,
+        CarFeatures.AIR_CONDITIONING,
+        CarFeatures.ALLOY_WHEELS,
+        CarFeatures.CD_PLAYER,
+        CarFeatures.ELECTRIC_WINDOWS,
+        CarFeatures.POWER_STEERING,
+        CarFeatures.SUNROOF
+    };
 
     /**
      * @param make
@@ -216,14 +227,60 @@ public class Car {
             featuresString += f + ", ";
         }
         return "Car{" +
-                "make=" + make +
-                ", model=" + model +
-                ", bodyType=" + bodyType +
-                ", engineType=" + engineType +
-                ", engineCC=" + engineCC +
-                ", color='" + color + '\'' +
-                ", transmission=" + transmission +
-                ", features=" + featuresString +
-                '}';
+                "\n\t make = " + make +
+                "\n\t model = " + model +
+                "\n\t bodyType = " + bodyType +
+                "\n\t engineType = " + engineType +
+                "\n\t engineCC = " + engineCC +
+                "\n\t color = '" + color + '\'' +
+                "\n\t transmission = " + transmission +
+                "\n\t features = " + featuresString +
+                '}' + "\n";
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((make == null) ? 0 : make.hashCode());
+        result = prime * result + ((model == null) ? 0 : model.hashCode());
+        result = prime * result + ((bodyType == null) ? 0 : bodyType.hashCode());
+        result = prime * result + ((engineType == null) ? 0 : engineType.hashCode());
+        result = prime * result + ((engineCC == null) ? 0 : engineCC.hashCode());
+        result = prime * result + ((color == null) ? 0 : color.hashCode());
+        result = prime * result + ((transmission == null) ? 0 : transmission.hashCode());
+        result = prime * result + Arrays.hashCode(features);
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Car other = (Car) obj;
+        if (make != other.make)
+            return false;
+        if (model != other.model)
+            return false;
+        if (bodyType != other.bodyType)
+            return false;
+        if (engineType != other.engineType)
+            return false;
+        if (engineCC != other.engineCC)
+            return false;
+        if (color == null) {
+            if (other.color != null)
+                return false;
+        } else if (!color.equals(other.color))
+            return false;
+        if (transmission != other.transmission)
+            return false;
+        if (!Arrays.equals(features, other.features))
+            return false;
+        return true;
     }
 }
