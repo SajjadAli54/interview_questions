@@ -1,0 +1,22 @@
+public enum BodyType {
+    SEDAN,
+    HATCHBACK,
+    SUV,
+    MINIVAN,
+    PICKUP,
+    COUPE,
+    CONVERTIBLE,
+    WAGON,
+    VAN,
+    CARGO,
+    TRUCK,
+    BUS,
+    MOTORCYCLE,
+    ATV,
+    UTV,
+    BOAT,
+    JETSKI,
+    SNOWMOBILE,
+    TRAILER,
+    OTHER
+}
