@@ -1,6 +1,28 @@
 # Tourists Pairing Problem
 
+
 import heapq
+###
+# heapq is a binary min heap implementation in Python. It is used to implement priority queues.
+# info about heapq: https://docs.python.org/3/library/heapq.html
+# info about heapq: https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/
+# ####
+
+
+def convert_to_int(list):
+    """Convert a list of strings to a list of integers."""
+    return map(lambda x: int(x), list)
+
+
+def get_T_S():
+    """Read the input file and return the list of tourists and the list of vehicles."""
+    data_points = open("tourists_input.txt", "r").read().splitlines()
+    T = data_points[0].split(" ")
+    S = data_points[1].split(" ")
+    T = convert_to_int(T)
+    S = convert_to_int(S)
+
+    return T, S
 
 
 def build_max_hep(S):
@@ -23,6 +45,5 @@ def find_min_vehicles(T, S):
     return count
 
 
-T = [2, 3, 4, 2]
-S = [2, 5, 7, 2]
+T, S = get_T_S()
 find_min_vehicles(T, S)
