@@ -6,6 +6,6 @@
 
 - [Car Manufacturing Design Problem](https://github.com/SajjadAli54/interview_questions/tree/main/Solutions/Car_Manufacturing/Project)
 
-- [MBS The Line](https://github.com/SajjadAli54/interview_questions/blob/main/questions.pdf)
+- [MBS The Line](https://github.com/SajjadAli54/interview_questions/tree/main/Solutions/MBS_The_Line)
 
-- [Counting Valleys](https://github.com/SajjadAli54/interview_questions/blob/main/Counting%20Valleys.pdf)
+- [Counting Valleys](https://github.com/SajjadAli54/interview_questions/tree/main/Solutions/Counting_Valley)
