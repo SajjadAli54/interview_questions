@@ -1,8 +1,8 @@
 # Counting Valley
 
-An avid hiker keeps meticulous records of their hikes. During the last hike that took exactly steps
-steps, for every step it was noted if it was an uphill U, or a downhill, D step. Hikes always start and
-end at sea level, and each step up or down represents a 1 unit change in altitude. We define the
+An avid hiker keeps meticulous records of their hikes. During the last hike that took exactly <b> steps </b>
+steps, for every step it was noted if it was an uphill <b> U </b>, or a downhill, <b> D </b> step. Hikes always start and
+end at sea level, and each step up or down represents a <b> 1 </b> unit change in altitude. We define the
 following terms:
 
 - A mountain is a sequence of consecutive steps above sea level, starting with a step up
@@ -14,8 +14,8 @@ following terms:
 
 ## Example
 
-Steps = 8 paths = [DDUUUUDD]
-The hiker first enters a valley 2 units deep. Then they climb out and up onto a mountain 2 units high.
+<b> Steps = 8 paths = [DDUUUUDD] </b>
+The hiker first enters a valley <b> 2 </b> units deep. Then they climb out and up onto a mountain <b> 2 </b> units high.
 Finally, the hiker returns to sea level and ends the hike.
 
 ## Function Description
@@ -38,7 +38,7 @@ The second line contains a single string , of characters that describe the path.
 ### Constraints
 
 - 2 <= steps <= 10^6
-- Path[i] belongs to {U D}
+- <b> Path[i] belongs to {U D} </b>
 
 ## Sample Input
 
