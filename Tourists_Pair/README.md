@@ -4,19 +4,17 @@ Tourism Development Corporation of Bali provides transportation services to grou
 
 There are two arrays given as input:
 
-• T[] which represents the tourist array that contains the number of tourists in each group
+- T[] which represents the tourist array that contains the number of tourists in each group
+- S[] which represents the seating capacities array that contains the number of seats available in each vehicle
 
-• S[] which represents the seating capacities array that contains the number of seats available in each vehicle
-
-Write a function that, given two arrays T[ ] of tourists and S[] of seating capacities, consisting of integer elements, returns the minimum number of
-
-vehicles needed to accommodate all the passengers.
+<b> Write a function that, given two arrays T[ ] of tourists and S[] of seating capacities, consisting of integer elements, returns the minimum number of vehicles needed to accommodate all the passengers. </b>
 
 Given:
 
-• Each element of arrays T and S is an integer within the range [1....100]
+- Each element of arrays T and S is an integer within the range [1....100]
+- T[K] <= S[K] for each K within the range [0..N-1]
 
-• T[K] <= S[K] for each K within the range [0..N-1]
+---
 
 ## Input
 
@@ -26,7 +24,9 @@ The input will be read from a file. The filename/path is passed to your program 
 
 The output will be an integer. (Minimum number of vehicles needed)
 
-## Examples:
+---
+
+## Examples
 
 ### Example 1.
 
