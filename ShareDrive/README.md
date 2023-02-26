@@ -81,11 +81,11 @@ Output will be the amount that needs to be paid by Driver or by Company. Amount 
 
 ## Sample Test Case Input
 
-2
-10017, 04/01/2022
-10017, 01/01/20200
+2 <br>
+10017, 04/01/2022 <br>
+10017, 01/01/20200 <br>
 
 ## Sample Test Case Output
 
-9634.4
--825.0
+9634.4 <br>
+-825.0 <br>
