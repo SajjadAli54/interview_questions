@@ -1,6 +1,6 @@
 # Some Common and Famous Interview Questions with their code
 
-- [Tourists Pairing](https://github.com/SajjadAli54/interview_questions/blob/main/questions.pdf)
+- [Tourists Pairing](https://github.com/SajjadAli54/interview_questions/tree/main/Tourists_Pair)
 
 - [Share Drive](https://github.com/SajjadAli54/interview_questions/blob/main/questions.pdf)
 
