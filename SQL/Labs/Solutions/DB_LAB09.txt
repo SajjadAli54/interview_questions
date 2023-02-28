@@ -1,0 +1,19 @@
+					---DATABASE SYSTEM---
+				LAB 09 : Working With DML Queries
+Name: M.KAMIL				SECTION-A				CMS ID: 021-19-0039
+======================================================================================================
+Q#01:
+	INSERT INTO projects VALUES (1,'AI for Marketing','2019-08-01','2019-12-31'),(2,'ML for Sales','2019-05-15','2019-12-31'),(3,'CS for IT','2020-01-01','2020-05-20'),(4,'SQL for input','2020-06-13','2020-11-20');
+	INSERT INTO student VALUES ('S100','Ali Mehmood','Administration','ali@iba-suk.edu.pk','0333-895311',3),('S101','Manisha Kataria','Computer Science','manisha@iba-suk.edu.pk','0345-111333444',2),('S102','Sagar Sanjay','Engineering','sagar@iba-suk.edu.pk','0300-22224454',2),('S103','Sara Shaikh','IT','sara@iba-suk.edu.pk','0300-111110000',3);
+Q#02:
+	ALTER TABLE student ADD constraint project_id FOREIGN KEY(project_id) references projects(project_id) ON UPDATE CASCADE ON DELETE SET NULL;
+	Delete from projects;
+Q#03:
+	INSERT INTO projects SELECT*FROM projects_copy;
+Q#04:
+	UPDATE projects set start_date='2023-02-01' WHERE name='CS for IT';
+Q#05:
+	UPDATE projects set cost = 90000 WHERE cost IS NULL;
+Q#06:
+	 UPDATE projects p INNER JOIN student s ON p.project_id=s.project_i
+d SET s.daystocomplete = DATEDIFF(p.end_date,p.start_date);

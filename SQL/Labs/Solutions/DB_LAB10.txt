@@ -1,0 +1,95 @@
+					---DATABASE SYSTEM---
+				LAB 10 : Stored Routines (Procedures & Functions)
+Name: M.KAMIL				SECTION-A				CMS ID: 021-19-0039
+======================================================================================================          
+Q#01:
+	DELIMITER $$ 
+	CREATE PROCEDURE display()
+	BEGIN
+		SELECT emp_name, emp_no, sal 
+		FROM employees
+		WHERE dept_no=10;
+	END $$
+	DELIMITER ;
+
+Q#02:
+	DELIMITER $$ 
+	CREATE PROCEDURE display2(IN dept_no INT)
+	BEGIN
+		SELECT dept_name, sal 
+		FROM departments 
+		JOIN employees USING(department_id)
+		WHERE d.dept_id=e.dept_id;
+	END $$
+	DELIMITER ;
+Q#03:
+	DELIMITER $$
+	CREATE PROCEDURE display3(IN deptNo DECIMAL(4,0))
+	BEGIN
+        	SELECT department_name, min(salary) AS minSalary, max(salary) AS maxSalary 
+	    	FROM departments d 
+	    	JOIN employees e
+	    	ON e.department_id=d.department_id 
+	    	GROUP BY e.department_id;
+    
+		SELECT employee_id, first_name, last_name, (salary+commission_pct) AS totSalary 
+	    	FROM employees
+	    	where department_id = deptNo;
+	END $$
+	DELIMITER ;
+Q#04:
+	DELIMITER $$
+	CREATE FUNCTION manager()
+	RETURNS DECIMAL
+	DETERMINISTIC
+	BEGIN
+		DECLARE totalSalary DECIMAL ;
+		SELECT SUM(e1.salary) INTO totalSalary 
+	        FROM employees e1, employees e2
+	        WHERE e1.employee_id = e2.manager_id;
+    
+	    	RETURN(totalSalary);
+	END$$
+	DELIMITER ; 
+   
+	SELECT manager() AS ManagersTotalSalary;
+Q#05:
+	DELIMITER $$
+	CREATE FUNCTION manager2(dept_id dec(4,0))
+	RETURNS VARCHAR(30)
+	DETERMINISTIC
+	BEGIN
+		DECLARE Manager VARCHAR(30) ;
+		SELECT CONCAT(e.first_name,' ', e.last_name) Names INTO Manager
+		    FROM employees e 
+		    JOIN employees d 
+		    ON e.employee_id=d.manager_id 
+		    WHERE d.employee_id=dept_id;
+    
+	    	RETURN (Manager);
+    	END$$
+	DELIMITER ;
+
+	SELECT CONCAT(first_name,' ',last_name) Names, manager2(employee_id) Managers FROM employees ;
+Q#06:
+	DELIMITER $$
+	CREATE FUNCTION manager3(fName VARCHAR(30), lName VARCHAR(30))
+	RETURNS DECIMAL(30,0)
+	DETERMINISTIC
+	BEGIN 	
+		DECLARE AvgSal DECIMAL(30,0);
+		SELECT AVG(e.salary) 'Avg Salary of Employees' INTO AvgSal 
+	   	FROM employees e 
+	    	JOIN employees d 
+	    	USING(employee_id) 
+	    	WHERE d.manager_id=(
+			SELECT employee_id 
+			FROM employees 
+	        	WHERE first_name=fName AND last_name=lName LIMIT 1
+			);
+        
+		RETURN(AvgSal);
+	END$$
+	DELIMITER ;
+
+	SELECT manager3('Steven' , 'King') AS 'AvgSal of his Employees';

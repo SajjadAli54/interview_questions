@@ -1,0 +1,35 @@
+1)	 select * from employees e 
+	where exists 
+	(select * from job_history 
+		where e.employee_id = employee_id and  e.job_id != job_id);
+
+		
+2)	 select * from employees e where exists (select * from job_history where e.employee_id = employee_id and  e.job_id != job_id); 
+
+3)	 select * from employees e where exists (select * from job_history where e.employee_id = employee_id and  e.job_id != job_id);
+
+4)	select first_name, last_name from employees where manager_id in (select manager_id from departments where location_id in (select location_id from locations where 
+	country_id = 'US') );
+	
+5)	 select first_name, last_name from employees where employee_id in (select manager_id from departments);
+
+6)	 select first_name, last_name, salary from employees where salary > (select avg(salary) from employees);
+
+7)	 select first_name, last_name, salary from employees where salary in (select min_salary from jobs);
+
+8)	select first_name, last_name, salary from employees a where salary > (select avg(salary) from employees) and department_id in (select department_id from department
+s where department_name like "IT%");
+	
+9)	 select first_name, last_name, salary from employees where salary > (select salary from employees where last_name = "Bell");
+
+10)   select first_name, last_name, salary from employees where salary in (select min(salary) from employees group by department_id);
+
+11)  select first_name, last_name, salary from employees where salary > all (select avg(salary) from employees group by department_id);
+
+12)  select first_name, last_name, salary from employees where salary > all (select salary from employees where job_id = 'sh_clerk') order by salary;
+
+13) select first_name, last_name from employees where employee_id = any (select manager_id from employees);
+
+14) select employee_id, first_name, last_name, department_name from employees e, departments d where e.department_id = d.department_id ;
+
+15) select employee_id, first_name, last_name, salary from employees where salary > all (select avg(salary) from employees) group by department_id;

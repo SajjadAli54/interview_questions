@@ -1,0 +1,69 @@
+1. Write a query to display the names (first_name, last_name) using alias name “First
+Name", "Last Name".
+
+mysql> select first_name as "First Name", last_name as "Last Name" from employees;
+
+
+2. Write a query to get unique department ID from employee table.
+
+
+mysql> select distinct employee_id from employees;
+
+3. Write a query to get all employee details from the employee table order by first name,
+descending.
+
+
+mysql> select * from employees order by first_name desc;
+
+4. Write a query to get the employee ID, names (first_name, last_name), salary in
+ascending order of salary.
+
+mysql> select employee_id, first_name, last_name, salary from employees order by salary;
+
+
+5. Write a query to get the total salaries payable to employees.
+
+mysql> select sum(salary) from employees;
+
+
+6. Write a query to get the maximum and minimum salary from employees table.
+
+
+mysql> select max(salary), min(salary) from employees;
+
+
+7. Write a query to get the average salary and number of employees in the employees
+table.
+
+mysql> select avg(salary), count(employee_id) from employees;
+
+
+8. Write a query to get the number of jobs available in the employees table.
+
+
+mysql> select count(distinct job_id) from employees;
+
+
+
+9. Write a query get all first name from employees table in upper case.
+
+
+mysql> select upper(first_name) from employees;
+
+
+
+10. Write a query to select first 10 records from a table.
+
+mysql> select * from employees limit 10;ec)
+
+
+11. Write a query to select 3rd & 4th record of employees table.
+
+mysql> select * from employees limit 2,2;
+
+
+12. Write a query to select 2nd last record of employees table.
+
+
+mysql> select * from employees order by employee_id desc limit 1,1;
+

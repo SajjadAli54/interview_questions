@@ -1,0 +1,30 @@
+1)	create table employees_copy as select * from employees;
+
+2)	alter table employees_copy add (address varchar(300));
+
+3)	alter table employees_copy drop address;
+
+4)	alter table employees_copy add (house_no varchar(10), street_no int, area varchar(10), city varchar(30));
+
+5)	alter table employees_copy change column house_no house_no int;
+
+6)	
+
+	create table faculty (faculty_id int primary key, faculty_name varchar(30));
+    		 
+	create table course (course_id varchar(8) primary key, course_name varchar(15));
+	
+	create table class (class_id varchar(8), course_id varchar(8) references course(course_id), section_no int, semester varchar(10));
+
+	create table student (student_id int primary key, student_name varchar(25), faculty_id int references faculty(faculty_id));
+
+7)	alter table student add (class_id varchar(8) references class(class_id));
+
+8)	rename table departments to dept;
+
+	alter table departments rename dept;
+	
+9)	alter table locations add (region_id decimal(5,0) references regions(region_id));
+
+10)	alter table locations change column state_province state varchar(25);
+	

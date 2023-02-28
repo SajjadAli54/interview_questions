@@ -1,0 +1,29 @@
+					---DATABASE SYSTEM---
+				LAB 07 : Working With DDL Queries
+Name: M.KAMIL				SECTION-A				CMS ID: 021-19-0039
+====================================================================================================
+Q#01:
+	 -CREATE TABLE new_employee LIKE employees;
+	 -INSERT INTO new_employee (SELECT*FROM employees);
+Q#02:
+	ALTER TABLE new_employee ADD(Address VARCHAR(100));
+Q#03:
+	ALTER TABLE new_employee DROP Address;
+Q#04:
+	ALTER TABLE new_employee ADD(HOUSE_NO VARCHAR(100),STREET_NO INT(11),AREA VARCHAR(11),CITY VARCHAR(11));
+Q#05:
+	 ALTER TABLE new_employee  MODIFY HOUSE_NO INT(11);
+Q#06:
+	- CREATE TABLE FACULTY (FacultyID INT(11),FacultyName VARCHAR(25));
+	- CREATE TABLE COURSE (CourseID VARCHAR(8),CourseName VARCHAR(15));
+	- CREATE TABLE CLASS (ClassID VARCHAR(8),CourseID VARCHAR(8),SectionNo INT(11),Semester VARCHAR(10));
+	- CREATE TABLE STUDENT (Student_ID INT(11),StudentName VARCHAR(11),FacultyID INT(11));
+Q#07:
+	 ALTER TABLE STUDENT ADD(ClassID VARCHAR(8));
+Q#08:
+	- RENAME TABLE departments TO dept;
+	- ALTER TABLE departments RENAME dept;
+Q#09:
+	 ALTER TABLE locations ADD(regionId INT(11));
+Q#10:
+	 ALTER TABLE locations CHANGE STATE_PROVINCE state VARCHAR(25);

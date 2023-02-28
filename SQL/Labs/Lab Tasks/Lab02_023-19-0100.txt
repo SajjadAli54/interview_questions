@@ -1,0 +1,1182 @@
+1. Write a query to display EMPLOYEE_ID, FIRST_NAME, and SALARY of employees
+whose SALARY is less than $3000.
+
+mysql> select employee_id, first_name, salary from employees where salary < 3000;
++-------------+------------+---------+
+| employee_id | first_name | salary  |
++-------------+------------+---------+
+|         116 | Shelli     | 2900.00 |
+|         117 | Sigal      | 2800.00 |
+|         118 | Guy        | 2600.00 |
+|         119 | Karen      | 2500.00 |
+|         126 | Irene      | 2700.00 |
+|         127 | James      | 2400.00 |
+|         128 | Steven     | 2200.00 |
+|         130 | Mozhe      | 2800.00 |
+|         131 | James      | 2500.00 |
+|         132 | TJ         | 2100.00 |
+|         134 | Michael    | 2900.00 |
+|         135 | Ki         | 2400.00 |
+|         136 | Hazel      | 2200.00 |
+|         139 | John       | 2700.00 |
+|         140 | Joshua     | 2500.00 |
+|         143 | Randall    | 2600.00 |
+|         144 | Peter      | 2500.00 |
+|         182 | Martha     | 2500.00 |
+|         183 | Girard     | 2800.00 |
+|         190 | Timothy    | 2900.00 |
+|         191 | Randall    | 2500.00 |
+|         195 | Vance      | 2800.00 |
+|         198 | Donald     | 2600.00 |
+|         199 | Douglas    | 2600.00 |
++-------------+------------+---------+
+
+2. Write a query to display FIRST_NAME, LASTNAME of all employees whose first name
+starts with letter ‘A’.
+
+mysql> select first_name, last_name from employees where first_name like 'A%';
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| Amit       | Banda     |
+| Alexis     | Bull      |
+| Anthony    | Cabrio    |
+| Alberto    | Errazuriz |
+| Adam       | Fripp     |
+| Alexander  | Hunold    |
+| Alyssa     | Hutton    |
+| Alexander  | Khoo      |
+| Allan      | McEwen    |
+| Alana      | Walsh     |
++------------+-----------+
+
+3. Write a query to display FIRST_NAME, JOB_ID, DEPARTMENT_ID of employees who
+are either PU_CLERK or belongs to MANAGER_ID = 114.
+
+mysql> select first_name, job_id, department_id from employees where job_id = 'PU_CLERK' or department_id = 114;
++------------+----------+---------------+
+| first_name | job_id   | department_id |
++------------+----------+---------------+
+| Alexander  | PU_CLERK |            30 |
+| Shelli     | PU_CLERK |            30 |
+| Sigal      | PU_CLERK |            30 |
+| Guy        | PU_CLERK |            30 |
+| Karen      | PU_CLERK |            30 |
++------------+----------+---------------+
+
+4. Write a query to display EMPLOYEE_ID, FIRST_NAME, and SALARY of employees
+whose salaries lies in the range of $1500 to $3000;
+
+mysql> select employee_id, first_name, salary from employees where salary between 1500 and 3000;
++-------------+------------+---------+
+| employee_id | first_name | salary  |
++-------------+------------+---------+
+|         116 | Shelli     | 2900.00 |
+|         117 | Sigal      | 2800.00 |
+|         118 | Guy        | 2600.00 |
+|         119 | Karen      | 2500.00 |
+|         126 | Irene      | 2700.00 |
+|         127 | James      | 2400.00 |
+|         128 | Steven     | 2200.00 |
+|         130 | Mozhe      | 2800.00 |
+|         131 | James      | 2500.00 |
+|         132 | TJ         | 2100.00 |
+|         134 | Michael    | 2900.00 |
+|         135 | Ki         | 2400.00 |
+|         136 | Hazel      | 2200.00 |
+|         139 | John       | 2700.00 |
+|         140 | Joshua     | 2500.00 |
+|         143 | Randall    | 2600.00 |
+|         144 | Peter      | 2500.00 |
+|         182 | Martha     | 2500.00 |
+|         183 | Girard     | 2800.00 |
+|         187 | Anthony    | 3000.00 |
+|         190 | Timothy    | 2900.00 |
+|         191 | Randall    | 2500.00 |
+|         195 | Vance      | 2800.00 |
+|         197 | Kevin      | 3000.00 |
+|         198 | Donald     | 2600.00 |
+|         199 | Douglas    | 2600.00 |
++-------------+------------+---------+
+
+5. Write a query to display EMPLOYEE_ID, FIRST_NAME, and SALARY of employees
+whose commission is empty.
+
+mysql> select employee_id, first_name, salary from employees where commission_pct is null;
+Empty set
+
+
+6. Write a query to display first names of all employees that end with alphabet ‘N’.
+
+mysql> select first_name from employees where first_name like '%N';
++------------+
+| first_name |
++------------+
+| Ellen      |
+| Hermann    |
+| Harrison   |
+| John       |
+| Karen      |
+| Kevin      |
+| Jean       |
+| Steven     |
+| Jason      |
+| Steven     |
+| Susan      |
+| Allan      |
+| Kevin      |
+| Karen      |
+| Den        |
+| John       |
+| John       |
+| Stephen    |
+| Jonathon   |
+| Winston    |
++------------+
+
+7. Write a query to display FIRST_NAME, JOB_ID, DEPARTMENT_ID of employees who
+are not PU_CLERK.
+
+mysql> select first_name, job_id, department_id from employees where not job_id = 'PU_CLERK';
++-------------+------------+---------------+
+| first_name  | job_id     | department_id |
++-------------+------------+---------------+
+| Steven      | AD_PRES    |            90 |
+| Neena       | AD_VP      |            90 |
+| Lex         | AD_VP      |            90 |
+| Alexander   | IT_PROG    |            60 |
+| Bruce       | IT_PROG    |            60 |
+| David       | IT_PROG    |            60 |
+| Valli       | IT_PROG    |            60 |
+| Diana       | IT_PROG    |            60 |
+| Nancy       | FI_MGR     |           100 |
+| Daniel      | FI_ACCOUNT |           100 |
+| John        | FI_ACCOUNT |           100 |
+| Ismael      | FI_ACCOUNT |           100 |
+| Jose Manuel | FI_ACCOUNT |           100 |
+| Luis        | FI_ACCOUNT |           100 |
+| Den         | PU_MAN     |            30 |
+| Matthew     | ST_MAN     |            50 |
+| Adam        | ST_MAN     |            50 |
+| Payam       | ST_MAN     |            50 |
+| Shanta      | ST_MAN     |            50 |
+| Kevin       | ST_MAN     |            50 |
+| Julia       | ST_CLERK   |            50 |
+| Irene       | ST_CLERK   |            50 |
+| James       | ST_CLERK   |            50 |
+| Steven      | ST_CLERK   |            50 |
+| Laura       | ST_CLERK   |            50 |
+| Mozhe       | ST_CLERK   |            50 |
+| James       | ST_CLERK   |            50 |
+| TJ          | ST_CLERK   |            50 |
+| Jason       | ST_CLERK   |            50 |
+| Michael     | ST_CLERK   |            50 |
+| Ki          | ST_CLERK   |            50 |
+| Hazel       | ST_CLERK   |            50 |
+| Renske      | ST_CLERK   |            50 |
+| Stephen     | ST_CLERK   |            50 |
+| John        | ST_CLERK   |            50 |
+| Joshua      | ST_CLERK   |            50 |
+| Trenna      | ST_CLERK   |            50 |
+| Curtis      | ST_CLERK   |            50 |
+| Randall     | ST_CLERK   |            50 |
+| Peter       | ST_CLERK   |            50 |
+| John        | SA_MAN     |            80 |
+| Karen       | SA_MAN     |            80 |
+| Alberto     | SA_MAN     |            80 |
+| Gerald      | SA_MAN     |            80 |
+| Eleni       | SA_MAN     |            80 |
+| Peter       | SA_REP     |            80 |
+| David       | SA_REP     |            80 |
+| Peter       | SA_REP     |            80 |
+| Christopher | SA_REP     |            80 |
+| Nanette     | SA_REP     |            80 |
+| Oliver      | SA_REP     |            80 |
+| Janette     | SA_REP     |            80 |
+| Patrick     | SA_REP     |            80 |
+| Allan       | SA_REP     |            80 |
+| Lindsey     | SA_REP     |            80 |
+| Louise      | SA_REP     |            80 |
+| Sarath      | SA_REP     |            80 |
+| Clara       | SA_REP     |            80 |
+| Danielle    | SA_REP     |            80 |
+| Mattea      | SA_REP     |            80 |
+| David       | SA_REP     |            80 |
+| Sundar      | SA_REP     |            80 |
+| Amit        | SA_REP     |            80 |
+| Lisa        | SA_REP     |            80 |
+| Harrison    | SA_REP     |            80 |
+| Tayler      | SA_REP     |            80 |
+| William     | SA_REP     |            80 |
+| Elizabeth   | SA_REP     |            80 |
+| Sundita     | SA_REP     |            80 |
+| Ellen       | SA_REP     |            80 |
+| Alyssa      | SA_REP     |            80 |
+| Jonathon    | SA_REP     |            80 |
+| Jack        | SA_REP     |            80 |
+| Kimberely   | SA_REP     |             0 |
+| Charles     | SA_REP     |            80 |
+| Winston     | SH_CLERK   |            50 |
+| Jean        | SH_CLERK   |            50 |
+| Martha      | SH_CLERK   |            50 |
+| Girard      | SH_CLERK   |            50 |
+| Nandita     | SH_CLERK   |            50 |
+| Alexis      | SH_CLERK   |            50 |
+| Julia       | SH_CLERK   |            50 |
+| Anthony     | SH_CLERK   |            50 |
+| Kelly       | SH_CLERK   |            50 |
+| Jennifer    | SH_CLERK   |            50 |
+| Timothy     | SH_CLERK   |            50 |
+| Randall     | SH_CLERK   |            50 |
+| Sarah       | SH_CLERK   |            50 |
+| Britney     | SH_CLERK   |            50 |
+| Samuel      | SH_CLERK   |            50 |
+| Vance       | SH_CLERK   |            50 |
+| Alana       | SH_CLERK   |            50 |
+| Kevin       | SH_CLERK   |            50 |
+| Donald      | SH_CLERK   |            50 |
+| Douglas     | SH_CLERK   |            50 |
+| Jennifer    | AD_ASST    |            10 |
+| Michael     | MK_MAN     |            20 |
+| Pat         | MK_REP     |            20 |
+| Susan       | HR_REP     |            40 |
+| Hermann     | PR_REP     |            70 |
+| Shelley     | AC_MGR     |           110 |
+| William     | AC_ACCOUNT |           110 |
++-------------+------------+---------------+
+
+
+8. Write a query to display EMPLOYEE_ID, FIRST_NAME, and SALARY of those
+employees who do not have salaries of $3300, $3200, $2200.
+
+mysql> select employee_id, first_name, salary from employees where salary not in (3300,3200,2200);
++-------------+-------------+----------+
+| employee_id | first_name  | salary   |
++-------------+-------------+----------+
+|         100 | Steven      | 24000.00 |
+|         101 | Neena       | 17000.00 |
+|         102 | Lex         | 17000.00 |
+|         103 | Alexander   |  9000.00 |
+|         104 | Bruce       |  6000.00 |
+|         105 | David       |  4800.00 |
+|         106 | Valli       |  4800.00 |
+|         107 | Diana       |  4200.00 |
+|         108 | Nancy       | 12000.00 |
+|         109 | Daniel      |  9000.00 |
+|         110 | John        |  8200.00 |
+|         111 | Ismael      |  7700.00 |
+|         112 | Jose Manuel |  7800.00 |
+|         113 | Luis        |  6900.00 |
+|         114 | Den         | 11000.00 |
+|         115 | Alexander   |  3100.00 |
+|         116 | Shelli      |  2900.00 |
+|         117 | Sigal       |  2800.00 |
+|         118 | Guy         |  2600.00 |
+|         119 | Karen       |  2500.00 |
+|         120 | Matthew     |  8000.00 |
+|         121 | Adam        |  8200.00 |
+|         122 | Payam       |  7900.00 |
+|         123 | Shanta      |  6500.00 |
+|         124 | Kevin       |  5800.00 |
+|         126 | Irene       |  2700.00 |
+|         127 | James       |  2400.00 |
+|         130 | Mozhe       |  2800.00 |
+|         131 | James       |  2500.00 |
+|         132 | TJ          |  2100.00 |
+|         134 | Michael     |  2900.00 |
+|         135 | Ki          |  2400.00 |
+|         137 | Renske      |  3600.00 |
+|         139 | John        |  2700.00 |
+|         140 | Joshua      |  2500.00 |
+|         141 | Trenna      |  3500.00 |
+|         142 | Curtis      |  3100.00 |
+|         143 | Randall     |  2600.00 |
+|         144 | Peter       |  2500.00 |
+|         145 | John        | 14000.00 |
+|         146 | Karen       | 13500.00 |
+|         147 | Alberto     | 12000.00 |
+|         148 | Gerald      | 11000.00 |
+|         149 | Eleni       | 10500.00 |
+|         150 | Peter       | 10000.00 |
+|         151 | David       |  9500.00 |
+|         152 | Peter       |  9000.00 |
+|         153 | Christopher |  8000.00 |
+|         154 | Nanette     |  7500.00 |
+|         155 | Oliver      |  7000.00 |
+|         156 | Janette     | 10000.00 |
+|         157 | Patrick     |  9500.00 |
+|         158 | Allan       |  9000.00 |
+|         159 | Lindsey     |  8000.00 |
+|         160 | Louise      |  7500.00 |
+|         161 | Sarath      |  7000.00 |
+|         162 | Clara       | 10500.00 |
+|         163 | Danielle    |  9500.00 |
+|         164 | Mattea      |  7200.00 |
+|         165 | David       |  6800.00 |
+|         166 | Sundar      |  6400.00 |
+|         167 | Amit        |  6200.00 |
+|         168 | Lisa        | 11500.00 |
+|         169 | Harrison    | 10000.00 |
+|         170 | Tayler      |  9600.00 |
+|         171 | William     |  7400.00 |
+|         172 | Elizabeth   |  7300.00 |
+|         173 | Sundita     |  6100.00 |
+|         174 | Ellen       | 11000.00 |
+|         175 | Alyssa      |  8800.00 |
+|         176 | Jonathon    |  8600.00 |
+|         177 | Jack        |  8400.00 |
+|         178 | Kimberely   |  7000.00 |
+|         179 | Charles     |  6200.00 |
+|         181 | Jean        |  3100.00 |
+|         182 | Martha      |  2500.00 |
+|         183 | Girard      |  2800.00 |
+|         184 | Nandita     |  4200.00 |
+|         185 | Alexis      |  4100.00 |
+|         186 | Julia       |  3400.00 |
+|         187 | Anthony     |  3000.00 |
+|         188 | Kelly       |  3800.00 |
+|         189 | Jennifer    |  3600.00 |
+|         190 | Timothy     |  2900.00 |
+|         191 | Randall     |  2500.00 |
+|         192 | Sarah       |  4000.00 |
+|         193 | Britney     |  3900.00 |
+|         195 | Vance       |  2800.00 |
+|         196 | Alana       |  3100.00 |
+|         197 | Kevin       |  3000.00 |
+|         198 | Donald      |  2600.00 |
+|         199 | Douglas     |  2600.00 |
+|         200 | Jennifer    |  4400.00 |
+|         201 | Michael     | 13000.00 |
+|         202 | Pat         |  6000.00 |
+|         203 | Susan       |  6500.00 |
+|         204 | Hermann     | 10000.00 |
+|         205 | Shelley     | 12000.00 |
+|         206 | William     |  8300.00 |
++-------------+-------------+----------+
+
+
+9. Write a query to display names of those employees whose first name starts with ‘A’
+and ends with ‘N’.
+
+mysql> select concat(first_name,' ',last_name) from employees where first_name like 'A%N';
++----------------------------------+
+| concat(first_name,' ',last_name) |
++----------------------------------+
+| Allan McEwen                     |
++----------------------------------+
+
+
+10. Write a query to display the list of employee names that have letters ‘LA’ in their
+names.
+
+mysql> select concat(first_name,' ',last_name) as name from employees where concat(first_name,' ',last_name) like '%LA';
++-----------------+
+| name            |
++-----------------+
+| Valli Pataballa |
++-----------------+
+
+11. Write a query to display the EMPLOYEE_ID, FIRST_NAME, and SALARY of employees.
+In that, the highest paid employee should display first and lowest paid should display
+last.
+
+mysql> select employee_id, first_name, salary from employees order by salary desc;
++-------------+-------------+----------+
+| employee_id | first_name  | salary   |
++-------------+-------------+----------+
+|         100 | Steven      | 24000.00 |
+|         101 | Neena       | 17000.00 |
+|         102 | Lex         | 17000.00 |
+|         145 | John        | 14000.00 |
+|         146 | Karen       | 13500.00 |
+|         201 | Michael     | 13000.00 |
+|         108 | Nancy       | 12000.00 |
+|         147 | Alberto     | 12000.00 |
+|         205 | Shelley     | 12000.00 |
+|         168 | Lisa        | 11500.00 |
+|         114 | Den         | 11000.00 |
+|         148 | Gerald      | 11000.00 |
+|         174 | Ellen       | 11000.00 |
+|         149 | Eleni       | 10500.00 |
+|         162 | Clara       | 10500.00 |
+|         150 | Peter       | 10000.00 |
+|         156 | Janette     | 10000.00 |
+|         169 | Harrison    | 10000.00 |
+|         204 | Hermann     | 10000.00 |
+|         170 | Tayler      |  9600.00 |
+|         151 | David       |  9500.00 |
+|         157 | Patrick     |  9500.00 |
+|         163 | Danielle    |  9500.00 |
+|         103 | Alexander   |  9000.00 |
+|         109 | Daniel      |  9000.00 |
+|         152 | Peter       |  9000.00 |
+|         158 | Allan       |  9000.00 |
+|         175 | Alyssa      |  8800.00 |
+|         176 | Jonathon    |  8600.00 |
+|         177 | Jack        |  8400.00 |
+|         206 | William     |  8300.00 |
+|         110 | John        |  8200.00 |
+|         121 | Adam        |  8200.00 |
+|         120 | Matthew     |  8000.00 |
+|         153 | Christopher |  8000.00 |
+|         159 | Lindsey     |  8000.00 |
+|         122 | Payam       |  7900.00 |
+|         112 | Jose Manuel |  7800.00 |
+|         111 | Ismael      |  7700.00 |
+|         154 | Nanette     |  7500.00 |
+|         160 | Louise      |  7500.00 |
+|         171 | William     |  7400.00 |
+|         172 | Elizabeth   |  7300.00 |
+|         164 | Mattea      |  7200.00 |
+|         155 | Oliver      |  7000.00 |
+|         161 | Sarath      |  7000.00 |
+|         178 | Kimberely   |  7000.00 |
+|         113 | Luis        |  6900.00 |
+|         165 | David       |  6800.00 |
+|         123 | Shanta      |  6500.00 |
+|         203 | Susan       |  6500.00 |
+|         166 | Sundar      |  6400.00 |
+|         167 | Amit        |  6200.00 |
+|         179 | Charles     |  6200.00 |
+|         173 | Sundita     |  6100.00 |
+|         104 | Bruce       |  6000.00 |
+|         202 | Pat         |  6000.00 |
+|         124 | Kevin       |  5800.00 |
+|         105 | David       |  4800.00 |
+|         106 | Valli       |  4800.00 |
+|         200 | Jennifer    |  4400.00 |
+|         107 | Diana       |  4200.00 |
+|         184 | Nandita     |  4200.00 |
+|         185 | Alexis      |  4100.00 |
+|         192 | Sarah       |  4000.00 |
+|         193 | Britney     |  3900.00 |
+|         188 | Kelly       |  3800.00 |
+|         137 | Renske      |  3600.00 |
+|         189 | Jennifer    |  3600.00 |
+|         141 | Trenna      |  3500.00 |
+|         186 | Julia       |  3400.00 |
+|         129 | Laura       |  3300.00 |
+|         133 | Jason       |  3300.00 |
+|         125 | Julia       |  3200.00 |
+|         138 | Stephen     |  3200.00 |
+|         180 | Winston     |  3200.00 |
+|         194 | Samuel      |  3200.00 |
+|         115 | Alexander   |  3100.00 |
+|         142 | Curtis      |  3100.00 |
+|         181 | Jean        |  3100.00 |
+|         196 | Alana       |  3100.00 |
+|         187 | Anthony     |  3000.00 |
+|         197 | Kevin       |  3000.00 |
+|         116 | Shelli      |  2900.00 |
+|         134 | Michael     |  2900.00 |
+|         190 | Timothy     |  2900.00 |
+|         117 | Sigal       |  2800.00 |
+|         130 | Mozhe       |  2800.00 |
+|         183 | Girard      |  2800.00 |
+|         195 | Vance       |  2800.00 |
+|         126 | Irene       |  2700.00 |
+|         139 | John        |  2700.00 |
+|         118 | Guy         |  2600.00 |
+|         143 | Randall     |  2600.00 |
+|         198 | Donald      |  2600.00 |
+|         199 | Douglas     |  2600.00 |
+|         119 | Karen       |  2500.00 |
+|         131 | James       |  2500.00 |
+|         140 | Joshua      |  2500.00 |
+|         144 | Peter       |  2500.00 |
+|         182 | Martha      |  2500.00 |
+|         191 | Randall     |  2500.00 |
+|         127 | James       |  2400.00 |
+|         135 | Ki          |  2400.00 |
+|         128 | Steven      |  2200.00 |
+|         136 | Hazel       |  2200.00 |
+|         132 | TJ          |  2100.00 |
++-------------+-------------+----------+
+
+
+12. Write a query to display FIRST_NAME of employees that have "a" in the second
+position.
+
+mysql> select first_name from employees where first_name like '_a%';
++------------+
+| first_name |
++------------+
+| David      |
+| Sarah      |
+| David      |
+| Laura      |
+| Harrison   |
+| Nanette    |
+| Karen      |
+| Daniel     |
+| Pat        |
+| Tayler     |
+| Nancy      |
+| Danielle   |
+| Vance      |
+| Payam      |
+| Janette    |
+| James      |
+| David      |
+| Jack       |
+| Jason      |
+| James      |
+| Mattea     |
+| Randall    |
+| Samuel     |
+| Karen      |
+| Valli      |
+| Randall    |
+| Hazel      |
+| Nandita    |
+| Sarath     |
+| Martha     |
+| Patrick    |
+| Matthew    |
++------------+
+
+
+13. Write a query to display EMPLOYEE_ID, FIRST_NAME, and SALARY of employees
+whose salaries do not lies in the range of $1500 to $3000;
+
+mysql> select employee_id, first_name, salary from employees where salary not between 1500 and 3000;
++-------------+-------------+----------+
+| employee_id | first_name  | salary   |
++-------------+-------------+----------+
+|         100 | Steven      | 24000.00 |
+|         101 | Neena       | 17000.00 |
+|         102 | Lex         | 17000.00 |
+|         103 | Alexander   |  9000.00 |
+|         104 | Bruce       |  6000.00 |
+|         105 | David       |  4800.00 |
+|         106 | Valli       |  4800.00 |
+|         107 | Diana       |  4200.00 |
+|         108 | Nancy       | 12000.00 |
+|         109 | Daniel      |  9000.00 |
+|         110 | John        |  8200.00 |
+|         111 | Ismael      |  7700.00 |
+|         112 | Jose Manuel |  7800.00 |
+|         113 | Luis        |  6900.00 |
+|         114 | Den         | 11000.00 |
+|         115 | Alexander   |  3100.00 |
+|         120 | Matthew     |  8000.00 |
+|         121 | Adam        |  8200.00 |
+|         122 | Payam       |  7900.00 |
+|         123 | Shanta      |  6500.00 |
+|         124 | Kevin       |  5800.00 |
+|         125 | Julia       |  3200.00 |
+|         129 | Laura       |  3300.00 |
+|         133 | Jason       |  3300.00 |
+|         137 | Renske      |  3600.00 |
+|         138 | Stephen     |  3200.00 |
+|         141 | Trenna      |  3500.00 |
+|         142 | Curtis      |  3100.00 |
+|         145 | John        | 14000.00 |
+|         146 | Karen       | 13500.00 |
+|         147 | Alberto     | 12000.00 |
+|         148 | Gerald      | 11000.00 |
+|         149 | Eleni       | 10500.00 |
+|         150 | Peter       | 10000.00 |
+|         151 | David       |  9500.00 |
+|         152 | Peter       |  9000.00 |
+|         153 | Christopher |  8000.00 |
+|         154 | Nanette     |  7500.00 |
+|         155 | Oliver      |  7000.00 |
+|         156 | Janette     | 10000.00 |
+|         157 | Patrick     |  9500.00 |
+|         158 | Allan       |  9000.00 |
+|         159 | Lindsey     |  8000.00 |
+|         160 | Louise      |  7500.00 |
+|         161 | Sarath      |  7000.00 |
+|         162 | Clara       | 10500.00 |
+|         163 | Danielle    |  9500.00 |
+|         164 | Mattea      |  7200.00 |
+|         165 | David       |  6800.00 |
+|         166 | Sundar      |  6400.00 |
+|         167 | Amit        |  6200.00 |
+|         168 | Lisa        | 11500.00 |
+|         169 | Harrison    | 10000.00 |
+|         170 | Tayler      |  9600.00 |
+|         171 | William     |  7400.00 |
+|         172 | Elizabeth   |  7300.00 |
+|         173 | Sundita     |  6100.00 |
+|         174 | Ellen       | 11000.00 |
+|         175 | Alyssa      |  8800.00 |
+|         176 | Jonathon    |  8600.00 |
+|         177 | Jack        |  8400.00 |
+|         178 | Kimberely   |  7000.00 |
+|         179 | Charles     |  6200.00 |
+|         180 | Winston     |  3200.00 |
+|         181 | Jean        |  3100.00 |
+|         184 | Nandita     |  4200.00 |
+|         185 | Alexis      |  4100.00 |
+|         186 | Julia       |  3400.00 |
+|         188 | Kelly       |  3800.00 |
+|         189 | Jennifer    |  3600.00 |
+|         192 | Sarah       |  4000.00 |
+|         193 | Britney     |  3900.00 |
+|         194 | Samuel      |  3200.00 |
+|         196 | Alana       |  3100.00 |
+|         200 | Jennifer    |  4400.00 |
+|         201 | Michael     | 13000.00 |
+|         202 | Pat         |  6000.00 |
+|         203 | Susan       |  6500.00 |
+|         204 | Hermann     | 10000.00 |
+|         205 | Shelley     | 12000.00 |
+|         206 | William     |  8300.00 |
++-------------+-------------+----------+
+
+
+14. Write a query to display FIRST_NAME, LAST_NAME and DEPARTMENT_ID of all
+employees in departments 30 or 100 in ascending order.
+
+mysql> select first_name, last_name, department_id from employees where department_id in (30,100) order by department_id;
++-------------+------------+---------------+
+| first_name  | last_name  | department_id |
++-------------+------------+---------------+
+| Den         | Raphaely   |            30 |
+| Alexander   | Khoo       |            30 |
+| Shelli      | Baida      |            30 |
+| Sigal       | Tobias     |            30 |
+| Guy         | Himuro     |            30 |
+| Karen       | Colmenares |            30 |
+| Nancy       | Greenberg  |           100 |
+| Daniel      | Faviet     |           100 |
+| John        | Chen       |           100 |
+| Ismael      | Sciarra    |           100 |
+| Jose Manuel | Urman      |           100 |
+| Luis        | Popp       |           100 |
++-------------+------------+---------------+
+
+
+15. Write a query to display FIRST_NAME, LAST_NAME and SALARY for all employees
+whose salary is not in the range $10,000 through $15,000 and are in department 30
+or 100.
+
+mysql> select first_name, last_name, salary from employees where department_id in (30,100) and salary not between 10000 and 15000;
++-------------+------------+---------+
+| first_name  | last_name  | salary  |
++-------------+------------+---------+
+| Alexander   | Khoo       | 3100.00 |
+| Shelli      | Baida      | 2900.00 |
+| Sigal       | Tobias     | 2800.00 |
+| Guy         | Himuro     | 2600.00 |
+| Karen       | Colmenares | 2500.00 |
+| Daniel      | Faviet     | 9000.00 |
+| John        | Chen       | 8200.00 |
+| Ismael      | Sciarra    | 7700.00 |
+| Jose Manuel | Urman      | 7800.00 |
+| Luis        | Popp       | 6900.00 |
++-------------+------------+---------+
+
+
+16. Write a query to display FIRST_NAME, LAST_NAME and HIRE_DATE for all employees
+who were hired in 1987.
+
+
+mysql> select first_name, last_name, hire_date from employees where hire_date like '1987%';
++-------------+-------------+------------+
+| first_name  | last_name   | hire_date  |
++-------------+-------------+------------+
+| Steven      | King        | 1987-06-17 |
+| Neena       | Kochhar     | 1987-06-18 |
+| Lex         | De Haan     | 1987-06-19 |
+| Alexander   | Hunold      | 1987-06-20 |
+| Bruce       | Ernst       | 1987-06-21 |
+| David       | Austin      | 1987-06-22 |
+| Valli       | Pataballa   | 1987-06-23 |
+| Diana       | Lorentz     | 1987-06-24 |
+| Nancy       | Greenberg   | 1987-06-25 |
+| Daniel      | Faviet      | 1987-06-26 |
+| John        | Chen        | 1987-06-27 |
+| Ismael      | Sciarra     | 1987-06-28 |
+| Jose Manuel | Urman       | 1987-06-29 |
+| Luis        | Popp        | 1987-06-30 |
+| Den         | Raphaely    | 1987-07-01 |
+| Alexander   | Khoo        | 1987-07-02 |
+| Shelli      | Baida       | 1987-07-03 |
+| Sigal       | Tobias      | 1987-07-04 |
+| Guy         | Himuro      | 1987-07-05 |
+| Karen       | Colmenares  | 1987-07-06 |
+| Matthew     | Weiss       | 1987-07-07 |
+| Adam        | Fripp       | 1987-07-08 |
+| Payam       | Kaufling    | 1987-07-09 |
+| Shanta      | Vollman     | 1987-07-10 |
+| Kevin       | Mourgos     | 1987-07-11 |
+| Julia       | Nayer       | 1987-07-12 |
+| Irene       | Mikkilineni | 1987-07-13 |
+| James       | Landry      | 1987-07-14 |
+| Steven      | Markle      | 1987-07-15 |
+| Laura       | Bissot      | 1987-07-16 |
+| Mozhe       | Atkinson    | 1987-07-17 |
+| James       | Marlow      | 1987-07-18 |
+| TJ          | Olson       | 1987-07-19 |
+| Jason       | Mallin      | 1987-07-20 |
+| Michael     | Rogers      | 1987-07-21 |
+| Ki          | Gee         | 1987-07-22 |
+| Hazel       | Philtanker  | 1987-07-23 |
+| Renske      | Ladwig      | 1987-07-24 |
+| Stephen     | Stiles      | 1987-07-25 |
+| John        | Seo         | 1987-07-26 |
+| Joshua      | Patel       | 1987-07-27 |
+| Trenna      | Rajs        | 1987-07-28 |
+| Curtis      | Davies      | 1987-07-29 |
+| Randall     | Matos       | 1987-07-30 |
+| Peter       | Vargas      | 1987-07-31 |
+| John        | Russell     | 1987-08-01 |
+| Karen       | Partners    | 1987-08-02 |
+| Alberto     | Errazuriz   | 1987-08-03 |
+| Gerald      | Cambrault   | 1987-08-04 |
+| Eleni       | Zlotkey     | 1987-08-05 |
+| Peter       | Tucker      | 1987-08-06 |
+| David       | Bernstein   | 1987-08-07 |
+| Peter       | Hall        | 1987-08-08 |
+| Christopher | Olsen       | 1987-08-09 |
+| Nanette     | Cambrault   | 1987-08-10 |
+| Oliver      | Tuvault     | 1987-08-11 |
+| Janette     | King        | 1987-08-12 |
+| Patrick     | Sully       | 1987-08-13 |
+| Allan       | McEwen      | 1987-08-14 |
+| Lindsey     | Smith       | 1987-08-15 |
+| Louise      | Doran       | 1987-08-16 |
+| Sarath      | Sewall      | 1987-08-17 |
+| Clara       | Vishney     | 1987-08-18 |
+| Danielle    | Greene      | 1987-08-19 |
+| Mattea      | Marvins     | 1987-08-20 |
+| David       | Lee         | 1987-08-21 |
+| Sundar      | Ande        | 1987-08-22 |
+| Amit        | Banda       | 1987-08-23 |
+| Lisa        | Ozer        | 1987-08-24 |
+| Harrison    | Bloom       | 1987-08-25 |
+| Tayler      | Fox         | 1987-08-26 |
+| William     | Smith       | 1987-08-27 |
+| Elizabeth   | Bates       | 1987-08-28 |
+| Sundita     | Kumar       | 1987-08-29 |
+| Ellen       | Abel        | 1987-08-30 |
+| Alyssa      | Hutton      | 1987-08-31 |
+| Jonathon    | Taylor      | 1987-09-01 |
+| Jack        | Livingston  | 1987-09-02 |
+| Kimberely   | Grant       | 1987-09-03 |
+| Charles     | Johnson     | 1987-09-04 |
+| Winston     | Taylor      | 1987-09-05 |
+| Jean        | Fleaur      | 1987-09-06 |
+| Martha      | Sullivan    | 1987-09-07 |
+| Girard      | Geoni       | 1987-09-08 |
+| Nandita     | Sarchand    | 1987-09-09 |
+| Alexis      | Bull        | 1987-09-10 |
+| Julia       | Dellinger   | 1987-09-11 |
+| Anthony     | Cabrio      | 1987-09-12 |
+| Kelly       | Chung       | 1987-09-13 |
+| Jennifer    | Dilly       | 1987-09-14 |
+| Timothy     | Gates       | 1987-09-15 |
+| Randall     | Perkins     | 1987-09-16 |
+| Sarah       | Bell        | 1987-09-17 |
+| Britney     | Everett     | 1987-09-18 |
+| Samuel      | McCain      | 1987-09-19 |
+| Vance       | Jones       | 1987-09-20 |
+| Alana       | Walsh       | 1987-09-21 |
+| Kevin       | Feeney      | 1987-09-22 |
+| Donald      | OConnell    | 1987-09-23 |
+| Douglas     | Grant       | 1987-09-24 |
+| Jennifer    | Whalen      | 1987-09-25 |
+| Michael     | Hartstein   | 1987-09-26 |
+| Pat         | Fay         | 1987-09-27 |
+| Susan       | Mavris      | 1987-09-28 |
+| Hermann     | Baer        | 1987-09-29 |
+| Shelley     | Higgins     | 1987-09-30 |
+| William     | Gietz       | 1987-10-01 |
++-------------+-------------+------------+
+
+
+17. Write a query to display the LAST_NAME of employees whose LAST_NAME have
+exactly 6 characters.
+
+mysql> select last_name from employees where last_name like '______';
++-----------+
+| last_name |
++-----------+
+| Austin    |
+| Bissot    |
+| Cabrio    |
+| Davies    |
+| Faviet    |
+| Feeney    |
+| Fleaur    |
+| Greene    |
+| Himuro    |
+| Hunold    |
+| Hutton    |
+| Ladwig    |
+| Landry    |
+| Mallin    |
+| Markle    |
+| Marlow    |
+| Mavris    |
+| McCain    |
+| McEwen    |
+| Rogers    |
+| Sewall    |
+| Stiles    |
+| Taylor    |
+| Taylor    |
+| Tobias    |
+| Tucker    |
+| Vargas    |
+| Whalen    |
++-----------+
+
+
+18. Write a query to display FIRST_NAME, SALARY and PF (15% of salary) of all
+employees.
+
+
+mysql> select first_name, last_name, 15 * salary / 100 as 'PF' from employees;
++-------------+-------------+-------------+
+| first_name  | last_name   | PF          |
++-------------+-------------+-------------+
+| Steven      | King        | 3600.000000 |
+| Neena       | Kochhar     | 2550.000000 |
+| Lex         | De Haan     | 2550.000000 |
+| Alexander   | Hunold      | 1350.000000 |
+| Bruce       | Ernst       |  900.000000 |
+| David       | Austin      |  720.000000 |
+| Valli       | Pataballa   |  720.000000 |
+| Diana       | Lorentz     |  630.000000 |
+| Nancy       | Greenberg   | 1800.000000 |
+| Daniel      | Faviet      | 1350.000000 |
+| John        | Chen        | 1230.000000 |
+| Ismael      | Sciarra     | 1155.000000 |
+| Jose Manuel | Urman       | 1170.000000 |
+| Luis        | Popp        | 1035.000000 |
+| Den         | Raphaely    | 1650.000000 |
+| Alexander   | Khoo        |  465.000000 |
+| Shelli      | Baida       |  435.000000 |
+| Sigal       | Tobias      |  420.000000 |
+| Guy         | Himuro      |  390.000000 |
+| Karen       | Colmenares  |  375.000000 |
+| Matthew     | Weiss       | 1200.000000 |
+| Adam        | Fripp       | 1230.000000 |
+| Payam       | Kaufling    | 1185.000000 |
+| Shanta      | Vollman     |  975.000000 |
+| Kevin       | Mourgos     |  870.000000 |
+| Julia       | Nayer       |  480.000000 |
+| Irene       | Mikkilineni |  405.000000 |
+| James       | Landry      |  360.000000 |
+| Steven      | Markle      |  330.000000 |
+| Laura       | Bissot      |  495.000000 |
+| Mozhe       | Atkinson    |  420.000000 |
+| James       | Marlow      |  375.000000 |
+| TJ          | Olson       |  315.000000 |
+| Jason       | Mallin      |  495.000000 |
+| Michael     | Rogers      |  435.000000 |
+| Ki          | Gee         |  360.000000 |
+| Hazel       | Philtanker  |  330.000000 |
+| Renske      | Ladwig      |  540.000000 |
+| Stephen     | Stiles      |  480.000000 |
+| John        | Seo         |  405.000000 |
+| Joshua      | Patel       |  375.000000 |
+| Trenna      | Rajs        |  525.000000 |
+| Curtis      | Davies      |  465.000000 |
+| Randall     | Matos       |  390.000000 |
+| Peter       | Vargas      |  375.000000 |
+| John        | Russell     | 2100.000000 |
+| Karen       | Partners    | 2025.000000 |
+| Alberto     | Errazuriz   | 1800.000000 |
+| Gerald      | Cambrault   | 1650.000000 |
+| Eleni       | Zlotkey     | 1575.000000 |
+| Peter       | Tucker      | 1500.000000 |
+| David       | Bernstein   | 1425.000000 |
+| Peter       | Hall        | 1350.000000 |
+| Christopher | Olsen       | 1200.000000 |
+| Nanette     | Cambrault   | 1125.000000 |
+| Oliver      | Tuvault     | 1050.000000 |
+| Janette     | King        | 1500.000000 |
+| Patrick     | Sully       | 1425.000000 |
+| Allan       | McEwen      | 1350.000000 |
+| Lindsey     | Smith       | 1200.000000 |
+| Louise      | Doran       | 1125.000000 |
+| Sarath      | Sewall      | 1050.000000 |
+| Clara       | Vishney     | 1575.000000 |
+| Danielle    | Greene      | 1425.000000 |
+| Mattea      | Marvins     | 1080.000000 |
+| David       | Lee         | 1020.000000 |
+| Sundar      | Ande        |  960.000000 |
+| Amit        | Banda       |  930.000000 |
+| Lisa        | Ozer        | 1725.000000 |
+| Harrison    | Bloom       | 1500.000000 |
+| Tayler      | Fox         | 1440.000000 |
+| William     | Smith       | 1110.000000 |
+| Elizabeth   | Bates       | 1095.000000 |
+| Sundita     | Kumar       |  915.000000 |
+| Ellen       | Abel        | 1650.000000 |
+| Alyssa      | Hutton      | 1320.000000 |
+| Jonathon    | Taylor      | 1290.000000 |
+| Jack        | Livingston  | 1260.000000 |
+| Kimberely   | Grant       | 1050.000000 |
+| Charles     | Johnson     |  930.000000 |
+| Winston     | Taylor      |  480.000000 |
+| Jean        | Fleaur      |  465.000000 |
+| Martha      | Sullivan    |  375.000000 |
+| Girard      | Geoni       |  420.000000 |
+| Nandita     | Sarchand    |  630.000000 |
+| Alexis      | Bull        |  615.000000 |
+| Julia       | Dellinger   |  510.000000 |
+| Anthony     | Cabrio      |  450.000000 |
+| Kelly       | Chung       |  570.000000 |
+| Jennifer    | Dilly       |  540.000000 |
+| Timothy     | Gates       |  435.000000 |
+| Randall     | Perkins     |  375.000000 |
+| Sarah       | Bell        |  600.000000 |
+| Britney     | Everett     |  585.000000 |
+| Samuel      | McCain      |  480.000000 |
+| Vance       | Jones       |  420.000000 |
+| Alana       | Walsh       |  465.000000 |
+| Kevin       | Feeney      |  450.000000 |
+| Donald      | OConnell    |  390.000000 |
+| Douglas     | Grant       |  390.000000 |
+| Jennifer    | Whalen      |  660.000000 |
+| Michael     | Hartstein   | 1950.000000 |
+| Pat         | Fay         |  900.000000 |
+| Susan       | Mavris      |  975.000000 |
+| Hermann     | Baer        | 1500.000000 |
+| Shelley     | Higgins     | 1800.000000 |
+| William     | Gietz       | 1245.000000 |
++-------------+-------------+-------------+
+
+
+
+19. Write a query to display FIRST_NAME, SALARY and commission amount (% of
+salary) of all employees.
+
+mysql> select first_name, salary, commission_pct * salary / 100 from employees;
++-------------+----------+-------------------------------+
+| first_name  | salary   | commission_pct * salary / 100 |
++-------------+----------+-------------------------------+
+| Steven      | 24000.00 |                    0.00000000 |
+| Neena       | 17000.00 |                    0.00000000 |
+| Lex         | 17000.00 |                    0.00000000 |
+| Alexander   |  9000.00 |                    0.00000000 |
+| Bruce       |  6000.00 |                    0.00000000 |
+| David       |  4800.00 |                    0.00000000 |
+| Valli       |  4800.00 |                    0.00000000 |
+| Diana       |  4200.00 |                    0.00000000 |
+| Nancy       | 12000.00 |                    0.00000000 |
+| Daniel      |  9000.00 |                    0.00000000 |
+| John        |  8200.00 |                    0.00000000 |
+| Ismael      |  7700.00 |                    0.00000000 |
+| Jose Manuel |  7800.00 |                    0.00000000 |
+| Luis        |  6900.00 |                    0.00000000 |
+| Den         | 11000.00 |                    0.00000000 |
+| Alexander   |  3100.00 |                    0.00000000 |
+| Shelli      |  2900.00 |                    0.00000000 |
+| Sigal       |  2800.00 |                    0.00000000 |
+| Guy         |  2600.00 |                    0.00000000 |
+| Karen       |  2500.00 |                    0.00000000 |
+| Matthew     |  8000.00 |                    0.00000000 |
+| Adam        |  8200.00 |                    0.00000000 |
+| Payam       |  7900.00 |                    0.00000000 |
+| Shanta      |  6500.00 |                    0.00000000 |
+| Kevin       |  5800.00 |                    0.00000000 |
+| Julia       |  3200.00 |                    0.00000000 |
+| Irene       |  2700.00 |                    0.00000000 |
+| James       |  2400.00 |                    0.00000000 |
+| Steven      |  2200.00 |                    0.00000000 |
+| Laura       |  3300.00 |                    0.00000000 |
+| Mozhe       |  2800.00 |                    0.00000000 |
+| James       |  2500.00 |                    0.00000000 |
+| TJ          |  2100.00 |                    0.00000000 |
+| Jason       |  3300.00 |                    0.00000000 |
+| Michael     |  2900.00 |                    0.00000000 |
+| Ki          |  2400.00 |                    0.00000000 |
+| Hazel       |  2200.00 |                    0.00000000 |
+| Renske      |  3600.00 |                    0.00000000 |
+| Stephen     |  3200.00 |                    0.00000000 |
+| John        |  2700.00 |                    0.00000000 |
+| Joshua      |  2500.00 |                    0.00000000 |
+| Trenna      |  3500.00 |                    0.00000000 |
+| Curtis      |  3100.00 |                    0.00000000 |
+| Randall     |  2600.00 |                    0.00000000 |
+| Peter       |  2500.00 |                    0.00000000 |
+| John        | 14000.00 |                   56.00000000 |
+| Karen       | 13500.00 |                   40.50000000 |
+| Alberto     | 12000.00 |                   36.00000000 |
+| Gerald      | 11000.00 |                   33.00000000 |
+| Eleni       | 10500.00 |                   21.00000000 |
+| Peter       | 10000.00 |                   30.00000000 |
+| David       |  9500.00 |                   23.75000000 |
+| Peter       |  9000.00 |                   22.50000000 |
+| Christopher |  8000.00 |                   16.00000000 |
+| Nanette     |  7500.00 |                   15.00000000 |
+| Oliver      |  7000.00 |                   10.50000000 |
+| Janette     | 10000.00 |                   35.00000000 |
+| Patrick     |  9500.00 |                   33.25000000 |
+| Allan       |  9000.00 |                   31.50000000 |
+| Lindsey     |  8000.00 |                   24.00000000 |
+| Louise      |  7500.00 |                   22.50000000 |
+| Sarath      |  7000.00 |                   17.50000000 |
+| Clara       | 10500.00 |                   26.25000000 |
+| Danielle    |  9500.00 |                   14.25000000 |
+| Mattea      |  7200.00 |                    7.20000000 |
+| David       |  6800.00 |                    6.80000000 |
+| Sundar      |  6400.00 |                    6.40000000 |
+| Amit        |  6200.00 |                    6.20000000 |
+| Lisa        | 11500.00 |                   28.75000000 |
+| Harrison    | 10000.00 |                   20.00000000 |
+| Tayler      |  9600.00 |                   19.20000000 |
+| William     |  7400.00 |                   11.10000000 |
+| Elizabeth   |  7300.00 |                   10.95000000 |
+| Sundita     |  6100.00 |                    6.10000000 |
+| Ellen       | 11000.00 |                   33.00000000 |
+| Alyssa      |  8800.00 |                   22.00000000 |
+| Jonathon    |  8600.00 |                   17.20000000 |
+| Jack        |  8400.00 |                   16.80000000 |
+| Kimberely   |  7000.00 |                   10.50000000 |
+| Charles     |  6200.00 |                    6.20000000 |
+| Winston     |  3200.00 |                    0.00000000 |
+| Jean        |  3100.00 |                    0.00000000 |
+| Martha      |  2500.00 |                    0.00000000 |
+| Girard      |  2800.00 |                    0.00000000 |
+| Nandita     |  4200.00 |                    0.00000000 |
+| Alexis      |  4100.00 |                    0.00000000 |
+| Julia       |  3400.00 |                    0.00000000 |
+| Anthony     |  3000.00 |                    0.00000000 |
+| Kelly       |  3800.00 |                    0.00000000 |
+| Jennifer    |  3600.00 |                    0.00000000 |
+| Timothy     |  2900.00 |                    0.00000000 |
+| Randall     |  2500.00 |                    0.00000000 |
+| Sarah       |  4000.00 |                    0.00000000 |
+| Britney     |  3900.00 |                    0.00000000 |
+| Samuel      |  3200.00 |                    0.00000000 |
+| Vance       |  2800.00 |                    0.00000000 |
+| Alana       |  3100.00 |                    0.00000000 |
+| Kevin       |  3000.00 |                    0.00000000 |
+| Donald      |  2600.00 |                    0.00000000 |
+| Douglas     |  2600.00 |                    0.00000000 |
+| Jennifer    |  4400.00 |                    0.00000000 |
+| Michael     | 13000.00 |                    0.00000000 |
+| Pat         |  6000.00 |                    0.00000000 |
+| Susan       |  6500.00 |                    0.00000000 |
+| Hermann     | 10000.00 |                    0.00000000 |
+| Shelley     | 12000.00 |                    0.00000000 |
+| William     |  8300.00 |                    0.00000000 |
++-------------+----------+-------------------------------+
+
+
+
+20. Write a query to display FIRST_NAME, SALARY and NET_SALARY after 500 deduction
+from salary of all employees;
+
+
+mysql> select first_name, salary, salary - 500 as 'Net Salary' from employees;
++-------------+----------+------------+
+| first_name  | salary   | Net Salary |
++-------------+----------+------------+
+| Steven      | 24000.00 |   23500.00 |
+| Neena       | 17000.00 |   16500.00 |
+| Lex         | 17000.00 |   16500.00 |
+| Alexander   |  9000.00 |    8500.00 |
+| Bruce       |  6000.00 |    5500.00 |
+| David       |  4800.00 |    4300.00 |
+| Valli       |  4800.00 |    4300.00 |
+| Diana       |  4200.00 |    3700.00 |
+| Nancy       | 12000.00 |   11500.00 |
+| Daniel      |  9000.00 |    8500.00 |
+| John        |  8200.00 |    7700.00 |
+| Ismael      |  7700.00 |    7200.00 |
+| Jose Manuel |  7800.00 |    7300.00 |
+| Luis        |  6900.00 |    6400.00 |
+| Den         | 11000.00 |   10500.00 |
+| Alexander   |  3100.00 |    2600.00 |
+| Shelli      |  2900.00 |    2400.00 |
+| Sigal       |  2800.00 |    2300.00 |
+| Guy         |  2600.00 |    2100.00 |
+| Karen       |  2500.00 |    2000.00 |
+| Matthew     |  8000.00 |    7500.00 |
+| Adam        |  8200.00 |    7700.00 |
+| Payam       |  7900.00 |    7400.00 |
+| Shanta      |  6500.00 |    6000.00 |
+| Kevin       |  5800.00 |    5300.00 |
+| Julia       |  3200.00 |    2700.00 |
+| Irene       |  2700.00 |    2200.00 |
+| James       |  2400.00 |    1900.00 |
+| Steven      |  2200.00 |    1700.00 |
+| Laura       |  3300.00 |    2800.00 |
+| Mozhe       |  2800.00 |    2300.00 |
+| James       |  2500.00 |    2000.00 |
+| TJ          |  2100.00 |    1600.00 |
+| Jason       |  3300.00 |    2800.00 |
+| Michael     |  2900.00 |    2400.00 |
+| Ki          |  2400.00 |    1900.00 |
+| Hazel       |  2200.00 |    1700.00 |
+| Renske      |  3600.00 |    3100.00 |
+| Stephen     |  3200.00 |    2700.00 |
+| John        |  2700.00 |    2200.00 |
+| Joshua      |  2500.00 |    2000.00 |
+| Trenna      |  3500.00 |    3000.00 |
+| Curtis      |  3100.00 |    2600.00 |
+| Randall     |  2600.00 |    2100.00 |
+| Peter       |  2500.00 |    2000.00 |
+| John        | 14000.00 |   13500.00 |
+| Karen       | 13500.00 |   13000.00 |
+| Alberto     | 12000.00 |   11500.00 |
+| Gerald      | 11000.00 |   10500.00 |
+| Eleni       | 10500.00 |   10000.00 |
+| Peter       | 10000.00 |    9500.00 |
+| David       |  9500.00 |    9000.00 |
+| Peter       |  9000.00 |    8500.00 |
+| Christopher |  8000.00 |    7500.00 |
+| Nanette     |  7500.00 |    7000.00 |
+| Oliver      |  7000.00 |    6500.00 |
+| Janette     | 10000.00 |    9500.00 |
+| Patrick     |  9500.00 |    9000.00 |
+| Allan       |  9000.00 |    8500.00 |
+| Lindsey     |  8000.00 |    7500.00 |
+| Louise      |  7500.00 |    7000.00 |
+| Sarath      |  7000.00 |    6500.00 |
+| Clara       | 10500.00 |   10000.00 |
+| Danielle    |  9500.00 |    9000.00 |
+| Mattea      |  7200.00 |    6700.00 |
+| David       |  6800.00 |    6300.00 |
+| Sundar      |  6400.00 |    5900.00 |
+| Amit        |  6200.00 |    5700.00 |
+| Lisa        | 11500.00 |   11000.00 |
+| Harrison    | 10000.00 |    9500.00 |
+| Tayler      |  9600.00 |    9100.00 |
+| William     |  7400.00 |    6900.00 |
+| Elizabeth   |  7300.00 |    6800.00 |
+| Sundita     |  6100.00 |    5600.00 |
+| Ellen       | 11000.00 |   10500.00 |
+| Alyssa      |  8800.00 |    8300.00 |
+| Jonathon    |  8600.00 |    8100.00 |
+| Jack        |  8400.00 |    7900.00 |
+| Kimberely   |  7000.00 |    6500.00 |
+| Charles     |  6200.00 |    5700.00 |
+| Winston     |  3200.00 |    2700.00 |
+| Jean        |  3100.00 |    2600.00 |
+| Martha      |  2500.00 |    2000.00 |
+| Girard      |  2800.00 |    2300.00 |
+| Nandita     |  4200.00 |    3700.00 |
+| Alexis      |  4100.00 |    3600.00 |
+| Julia       |  3400.00 |    2900.00 |
+| Anthony     |  3000.00 |    2500.00 |
+| Kelly       |  3800.00 |    3300.00 |
+| Jennifer    |  3600.00 |    3100.00 |
+| Timothy     |  2900.00 |    2400.00 |
+| Randall     |  2500.00 |    2000.00 |
+| Sarah       |  4000.00 |    3500.00 |
+| Britney     |  3900.00 |    3400.00 |
+| Samuel      |  3200.00 |    2700.00 |
+| Vance       |  2800.00 |    2300.00 |
+| Alana       |  3100.00 |    2600.00 |
+| Kevin       |  3000.00 |    2500.00 |
+| Donald      |  2600.00 |    2100.00 |
+| Douglas     |  2600.00 |    2100.00 |
+| Jennifer    |  4400.00 |    3900.00 |
+| Michael     | 13000.00 |   12500.00 |
+| Pat         |  6000.00 |    5500.00 |
+| Susan       |  6500.00 |    6000.00 |
+| Hermann     | 10000.00 |    9500.00 |
+| Shelley     | 12000.00 |   11500.00 |
+| William     |  8300.00 |    7800.00 |
++-------------+----------+------------+
+

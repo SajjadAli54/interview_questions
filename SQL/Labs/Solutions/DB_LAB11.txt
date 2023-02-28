@@ -1,0 +1,244 @@
+					---DATABASE SYSTEM---
+				LAB 11 : Control Structures
+Name: M.KAMIL				SECTION-A				CMS ID: 021-19-0039
+======================================================================================================   
+-----------------------------------------------------------------------
+				Q#01:
+-----------------------------------------------------------------------
+	DELIMITER $$
+	CREATE PROCEDURE countEven(IN num INT)
+	BEGIN
+
+	DECLARE x INT ;
+    	DECLARE sum INT;
+    	SET sum = 0;
+	SET x = 2;
+    	myloop: LOOP
+       		IF num > 2 THEN 
+       			SET sum = sum+x+num;
+       			SET num = num-2;
+       		ELSE 
+       			LEAVE myloop;
+       		END IF;
+	END LOOP;
+    	SELECT sum;
+
+	END$$
+	DELIMITER 	;  
+-----------------------------------------------------------------------
+				Q#02:
+-----------------------------------------------------------------------
+	DELIMITER $$
+	CREATE PROCEDURE checkCustomer( IN num INT)
+	BEGIN
+	DECLARE name varchar(40);
+    	SET name = 'hye';
+	SELECT FIRST_NAME INTO name FROM employees WHERE num = EMPLOYEE_ID;
+    		IF name = 'hye' THEN
+    		SELECT 'The name does not exist...';
+    	ELSE
+    		SELECT 'The name exists...';
+   		 END IF;
+END $$
+DELIMITER ;
+-----------------------------------------------------------------------
+				Q#03:
+-----------------------------------------------------------------------
+	DELIMITER $$
+	CREATE PROCEDURE CountEmployees(INOUT count INT , IN value INT)
+	BEGIN
+		SELECT COUNT(*) INTO value FROM employees WHERE SALARY>value;
+		IF value = 0 THEN 
+    		SELECT 'NO COUNT...';
+    	ELSE
+    		SET count = value;
+     	SELECT count;
+     	
+    END IF;
+ 
+END$$
+DELIMITER ;
+-----------------------------------------------------------------------
+				Q#04:
+-----------------------------------------------------------------------
+	DELIMITER $$
+	CREATE PROCEDURE EvenOdd(IN num INT)
+	BEGIN
+    	IF num%2 = 0 THEN
+		SELECT 'The number is Even...';
+    	ELSE
+    		SELECT 'The number is Odd...';
+    END IF;
+END$$
+DELIMITER ;
+-----------------------------------------------------------------------
+				Q#05:
+-----------------------------------------------------------------------
+	DELIMITER $$ 
+	CREATE PROCEDURE ForLoop() 
+	BEGIN 
+	DECLARE counter INT DEFAULT 1; 
+	DECLARE result VARCHAR(50) DEFAULT ''; 
+
+	loop_label: LOOP 
+
+	IF counter>5 THEN 
+	LEAVE loop_label; 
+	END IF;
+
+	SET result = CONCAT(counter,', ', result); 
+	SET counter = counter + 1; 
+
+	END LOOP loop_label; 
+
+	SELECT result; 
+	END$$ 
+	DELIMITER ;
+----------------------------------------------------------------
+	DELIMITER $$ 
+	CREATE PROCEDURE WhileLoop() 
+	BEGIN 
+	DECLARE counter INT DEFAULT 1; 
+	DECLARE result VARCHAR(50) DEFAULT ''; 
+
+	WHILE counter<=5 DO
+
+	SET result = CONCAT(counter,', ', result); 
+	SET counter = counter + 1; 
+
+	END WHILE; 
+	SELECT result; 
+	END$$ 
+	DELIMITER ;
+------------------------------------------------------------------
+	DELIMITER $$ 
+	CREATE PROCEDURE Repeat() 
+	BEGIN 
+	DECLARE counter INT DEFAULT 1; 
+	DECLARE result VARCHAR(50) DEFAULT ''; 
+
+	REPEAT 
+	SET result = CONCAT(counter,', ', result); 
+	SET counter = counter + 1; 
+	UNTIL counter >5 
+	END REPEAT; 
+
+	SELECT result; 
+	END$$ 
+	DELIMITER ;
+-------------------------------------------------------------------
+				Q#06:
+-------------------------------------------------------------------
+	DELIMITER $$ 
+	CREATE PROCEDURE ForLoop() 
+	BEGIN 
+	DECLARE counter INT DEFAULT 5; 
+	DECLARE result VARCHAR(50) DEFAULT ''; 
+
+	loop_label: LOOP 
+
+	IF counter<1 THEN 
+	LEAVE loop_label; 
+	END IF;
+
+	SET result = CONCAT(counter,', ', result); 
+	SET counter = counter - 1; 
+
+	END LOOP loop_label; 
+
+	SELECT result; 
+	END$$ 
+	DELIMITER ;
+---------------------------------------------------------------
+	DELIMITER $$ 
+	CREATE PROCEDURE WhileLoop() 
+	BEGIN 
+	DECLARE counter INT DEFAULT 5; 
+	DECLARE result VARCHAR(50) DEFAULT ''; 
+
+	WHILE counter=>1 DO
+	SET result = CONCAT(counter,', ', result); 
+	SET counter = counter - 1; 
+
+	END WHILE; 
+
+	SELECT result; 
+	END$$ 
+	DELIMITER ;
+------------------------------------------------------------------
+	DELIMITER $$ 
+	CREATE PROCEDURE Repeat() 
+	BEGIN 
+	DECLARE counter INT DEFAULT 5; 
+	DECLARE result VARCHAR(50) DEFAULT ''; 
+	REPEAT 
+	SET result = CONCAT(counter,', ', result); 
+	SET counter = counter - 1; 
+	UNTIL counter <1
+	END REPEAT; 
+
+	SELECT result; 
+	END$$ 
+	DELIMITER ;
+---------------------------------------------------------------------
+			Q#07:
+---------------------------------------------------------------------
+	DELIMITER $$ 
+	CREATE PROCEDURE loopLoop() 
+	BEGIN 
+	DECLARE counter INT DEFAULT -5; 
+	DECLARE result VARCHAR(50) DEFAULT ''; 
+
+	loop_label: LOOP 
+	IF counter >-1 THEN 
+	LEAVE loop_label; 
+	END IF;
+	SET result = CONCAT(counter,', ', result); 
+	SET counter = counter + 1; 
+
+	END LOOP loop_label; 
+
+	SELECT result; 
+	END$$ 
+	DELIMITER ;
+-----------------------------------------------------------------------
+	DELIMITER $$ 
+	CREATE PROCEDURE WhileLoop() 
+	BEGIN 
+	DECLARE counter INT DEFAULT -5; 
+	DECLARE result VARCHAR(50) DEFAULT ''; 
+	WHILE counter >= -1 DO
+
+	SET result = CONCAT(counter,', ', result); 
+	SET counter = counter + 1; 
+
+	END WHILE; 
+
+	SELECT result; 
+	END$$ 
+	DELIMITER ;
+------------------------------------------------------------------------
+	DELIMITER $$ 
+	CREATE PROCEDURE Repeat() 
+	BEGIN 
+	DECLARE counter INT DEFAULT -5; 
+	DECLARE result VARCHAR(50) DEFAULT ''; 
+	REPEAT 
+	SET result = CONCAT(counter,', ', result); 
+	SET counter = counter + 1; 
+	UNTIL counter > 0
+	END REPEAT; 
+	SELECT result; 
+	END$$ 
+	DELIMITER ;
+---------------------------END------------------------------------------
+
+
+
+
+
+
+
+
+
+	

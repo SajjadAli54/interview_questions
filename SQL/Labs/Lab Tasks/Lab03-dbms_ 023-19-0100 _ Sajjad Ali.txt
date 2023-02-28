@@ -1,0 +1,1015 @@
+1)
+
+MariaDB [hr]> select concat(left(first_name,3),right(job_id,3)) as "New Name" from employees;
++----------+
+| New Name |
++----------+
+| SteRES   |
+| Nee_VP   |
+| Lex_VP   |
+| AleROG   |
+| BruROG   |
+| DavROG   |
+| ValROG   |
+| DiaROG   |
+| NanMGR   |
+| DanUNT   |
+| JohUNT   |
+| IsmUNT   |
+| JosUNT   |
+| LuiUNT   |
+| DenMAN   |
+| AleERK   |
+| SheERK   |
+| SigERK   |
+| GuyERK   |
+| KarERK   |
+| MatMAN   |
+| AdaMAN   |
+| PayMAN   |
+| ShaMAN   |
+| KevMAN   |
+| JulERK   |
+| IreERK   |
+| JamERK   |
+| SteERK   |
+| LauERK   |
+| MozERK   |
+| JamERK   |
+| TJERK    |
+| JasERK   |
+| MicERK   |
+| KiERK    |
+| HazERK   |
+| RenERK   |
+| SteERK   |
+| JohERK   |
+| JosERK   |
+| TreERK   |
+| CurERK   |
+| RanERK   |
+| PetERK   |
+| JohMAN   |
+| KarMAN   |
+| AlbMAN   |
+| GerMAN   |
+| EleMAN   |
+| PetREP   |
+| DavREP   |
+| PetREP   |
+| ChrREP   |
+| NanREP   |
+| OliREP   |
+| JanREP   |
+| PatREP   |
+| AllREP   |
+| LinREP   |
+| LouREP   |
+| SarREP   |
+| ClaREP   |
+| DanREP   |
+| MatREP   |
+| DavREP   |
+| SunREP   |
+| AmiREP   |
+| LisREP   |
+| HarREP   |
+| TayREP   |
+| WilREP   |
+| EliREP   |
+| SunREP   |
+| EllREP   |
+| AlyREP   |
+| JonREP   |
+| JacREP   |
+| KimREP   |
+| ChaREP   |
+| WinERK   |
+| JeaERK   |
+| MarERK   |
+| GirERK   |
+| NanERK   |
+| AleERK   |
+| JulERK   |
+| AntERK   |
+| KelERK   |
+| JenERK   |
+| TimERK   |
+| RanERK   |
+| SarERK   |
+| BriERK   |
+| SamERK   |
+| VanERK   |
+| AlaERK   |
+| KevERK   |
+| DonERK   |
+| DouERK   |
+| JenSST   |
+| MicMAN   |
+| PatREP   |
+| SusREP   |
+| HerREP   |
+| SheMGR   |
+| WilUNT   |
++----------+
+107 rows in set (0.093 sec)
+
+
+2)
+
+MariaDB [hr]> select replace(job_id,'E','I') as "New Jobs" from employees;
++------------+
+| New Jobs   |
++------------+
+| AC_ACCOUNT |
+| AC_MGR     |
+| AD_ASST    |
+| AD_PRIS    |
+| AD_VP      |
+| AD_VP      |
+| FI_ACCOUNT |
+| FI_ACCOUNT |
+| FI_ACCOUNT |
+| FI_ACCOUNT |
+| FI_ACCOUNT |
+| FI_MGR     |
+| HR_RIP     |
+| IT_PROG    |
+| IT_PROG    |
+| IT_PROG    |
+| IT_PROG    |
+| IT_PROG    |
+| MK_MAN     |
+| MK_RIP     |
+| PR_RIP     |
+| PU_CLIRK   |
+| PU_CLIRK   |
+| PU_CLIRK   |
+| PU_CLIRK   |
+| PU_CLIRK   |
+| PU_MAN     |
+| SA_MAN     |
+| SA_MAN     |
+| SA_MAN     |
+| SA_MAN     |
+| SA_MAN     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SA_RIP     |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| SH_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_CLIRK   |
+| ST_MAN     |
+| ST_MAN     |
+| ST_MAN     |
+| ST_MAN     |
+| ST_MAN     |
++------------+
+107 rows in set (0.016 sec)
+
+
+3)
+
+MariaDB [hr]> select concat(first_name,' ',last_name) as "Name", year(current_date()) - year(date(hire_date)) as "Hire Years" from employees;
++-------------------+------------+
+| Name              | Hire Years |
++-------------------+------------+
+| Steven King       |         34 |
+| Neena Kochhar     |         34 |
+| Lex De Haan       |         34 |
+| Alexander Hunold  |         34 |
+| Bruce Ernst       |         34 |
+| David Austin      |         34 |
+| Valli Pataballa   |         34 |
+| Diana Lorentz     |         34 |
+| Nancy Greenberg   |         34 |
+| Daniel Faviet     |         34 |
+| John Chen         |         34 |
+| Ismael Sciarra    |         34 |
+| Jose Manuel Urman |         34 |
+| Luis Popp         |         34 |
+| Den Raphaely      |         34 |
+| Alexander Khoo    |         34 |
+| Shelli Baida      |         34 |
+| Sigal Tobias      |         34 |
+| Guy Himuro        |         34 |
+| Karen Colmenares  |         34 |
+| Matthew Weiss     |         34 |
+| Adam Fripp        |         34 |
+| Payam Kaufling    |         34 |
+| Shanta Vollman    |         34 |
+| Kevin Mourgos     |         34 |
+| Julia Nayer       |         34 |
+| Irene Mikkilineni |         34 |
+| James Landry      |         34 |
+| Steven Markle     |         34 |
+| Laura Bissot      |         34 |
+| Mozhe Atkinson    |         34 |
+| James Marlow      |         34 |
+| TJ Olson          |         34 |
+| Jason Mallin      |         34 |
+| Michael Rogers    |         34 |
+| Ki Gee            |         34 |
+| Hazel Philtanker  |         34 |
+| Renske Ladwig     |         34 |
+| Stephen Stiles    |         34 |
+| John Seo          |         34 |
+| Joshua Patel      |         34 |
+| Trenna Rajs       |         34 |
+| Curtis Davies     |         34 |
+| Randall Matos     |         34 |
+| Peter Vargas      |         34 |
+| John Russell      |         34 |
+| Karen Partners    |         34 |
+| Alberto Errazuriz |         34 |
+| Gerald Cambrault  |         34 |
+| Eleni Zlotkey     |         34 |
+| Peter Tucker      |         34 |
+| David Bernstein   |         34 |
+| Peter Hall        |         34 |
+| Christopher Olsen |         34 |
+| Nanette Cambrault |         34 |
+| Oliver Tuvault    |         34 |
+| Janette King      |         34 |
+| Patrick Sully     |         34 |
+| Allan McEwen      |         34 |
+| Lindsey Smith     |         34 |
+| Louise Doran      |         34 |
+| Sarath Sewall     |         34 |
+| Clara Vishney     |         34 |
+| Danielle Greene   |         34 |
+| Mattea Marvins    |         34 |
+| David Lee         |         34 |
+| Sundar Ande       |         34 |
+| Amit Banda        |         34 |
+| Lisa Ozer         |         34 |
+| Harrison Bloom    |         34 |
+| Tayler Fox        |         34 |
+| William Smith     |         34 |
+| Elizabeth Bates   |         34 |
+| Sundita Kumar     |         34 |
+| Ellen Abel        |         34 |
+| Alyssa Hutton     |         34 |
+| Jonathon Taylor   |         34 |
+| Jack Livingston   |         34 |
+| Kimberely Grant   |         34 |
+| Charles Johnson   |         34 |
+| Winston Taylor    |         34 |
+| Jean Fleaur       |         34 |
+| Martha Sullivan   |         34 |
+| Girard Geoni      |         34 |
+| Nandita Sarchand  |         34 |
+| Alexis Bull       |         34 |
+| Julia Dellinger   |         34 |
+| Anthony Cabrio    |         34 |
+| Kelly Chung       |         34 |
+| Jennifer Dilly    |         34 |
+| Timothy Gates     |         34 |
+| Randall Perkins   |         34 |
+| Sarah Bell        |         34 |
+| Britney Everett   |         34 |
+| Samuel McCain     |         34 |
+| Vance Jones       |         34 |
+| Alana Walsh       |         34 |
+| Kevin Feeney      |         34 |
+| Donald OConnell   |         34 |
+| Douglas Grant     |         34 |
+| Jennifer Whalen   |         34 |
+| Michael Hartstein |         34 |
+| Pat Fay           |         34 |
+| Susan Mavris      |         34 |
+| Hermann Baer      |         34 |
+| Shelley Higgins   |         34 |
+| William Gietz     |         34 |
++-------------------+------------+
+107 rows in set (0.041 sec)
+
+
+4)
+
+
+MariaDB [hr]> select concat(first_name,' ',last_name) as "Name", date_format(hire_date,"%M %D %Y") as "Hire Date" from employees where hire_date < date("1987-07-30");
++-------------------+----------------+
+| Name              | Hire Date      |
++-------------------+----------------+
+| Steven King       | June 17th 1987 |
+| Neena Kochhar     | June 18th 1987 |
+| Lex De Haan       | June 19th 1987 |
+| Alexander Hunold  | June 20th 1987 |
+| Bruce Ernst       | June 21st 1987 |
+| David Austin      | June 22nd 1987 |
+| Valli Pataballa   | June 23rd 1987 |
+| Diana Lorentz     | June 24th 1987 |
+| Nancy Greenberg   | June 25th 1987 |
+| Daniel Faviet     | June 26th 1987 |
+| John Chen         | June 27th 1987 |
+| Ismael Sciarra    | June 28th 1987 |
+| Jose Manuel Urman | June 29th 1987 |
+| Luis Popp         | June 30th 1987 |
+| Den Raphaely      | July 1st 1987  |
+| Alexander Khoo    | July 2nd 1987  |
+| Shelli Baida      | July 3rd 1987  |
+| Sigal Tobias      | July 4th 1987  |
+| Guy Himuro        | July 5th 1987  |
+| Karen Colmenares  | July 6th 1987  |
+| Matthew Weiss     | July 7th 1987  |
+| Adam Fripp        | July 8th 1987  |
+| Payam Kaufling    | July 9th 1987  |
+| Shanta Vollman    | July 10th 1987 |
+| Kevin Mourgos     | July 11th 1987 |
+| Julia Nayer       | July 12th 1987 |
+| Irene Mikkilineni | July 13th 1987 |
+| James Landry      | July 14th 1987 |
+| Steven Markle     | July 15th 1987 |
+| Laura Bissot      | July 16th 1987 |
+| Mozhe Atkinson    | July 17th 1987 |
+| James Marlow      | July 18th 1987 |
+| TJ Olson          | July 19th 1987 |
+| Jason Mallin      | July 20th 1987 |
+| Michael Rogers    | July 21st 1987 |
+| Ki Gee            | July 22nd 1987 |
+| Hazel Philtanker  | July 23rd 1987 |
+| Renske Ladwig     | July 24th 1987 |
+| Stephen Stiles    | July 25th 1987 |
+| John Seo          | July 26th 1987 |
+| Joshua Patel      | July 27th 1987 |
+| Trenna Rajs       | July 28th 1987 |
+| Curtis Davies     | July 29th 1987 |
++-------------------+----------------+
+43 rows in set (0.001 sec)
+
+
+5)
+
+
+MariaDB [hr]> select day(adddate(current_timestamp(),interval -24 hour)) as "Last Day", month(adddate(current_timestamp(),interval -3 month)) as "Month before 3 months";
++----------+-----------------------+
+| Last Day | Month before 3 months |
++----------+-----------------------+
+|       20 |                    12 |
++----------+-----------------------+
+1 row in set (0.001 sec)
+
+
+
+6)
+
+
+MariaDB [hr]> select date_format(current_date(),"%W %D %M %Y");
++-------------------------------------------+
+| date_format(current_date(),"%W %D %M %Y") |
++-------------------------------------------+
+| Sunday 21st March 2021                    |
++-------------------------------------------+
+1 row in set (0.000 sec)
+
+
+7)
+
+
+MariaDB [hr]> select date_format("2014-09-04","%M %d, %Y");
++---------------------------------------+
+| date_format("2014-09-04","%M %d, %Y") |
++---------------------------------------+
+| September 04, 2014                    |
++---------------------------------------+
+1 row in set (0.000 sec)
+
+
+8)
+
+
+MariaDB [hr]> select date_format("2014-09-04","%W %M %d %Y");
++-----------------------------------------+
+| date_format("2014-09-04","%W %M %d %Y") |
++-----------------------------------------+
+| Thursday September 04 2014              |
++-----------------------------------------+
+1 row in set (0.000 sec)
+
+
+
+9)
+
+
+MariaDB [hr]> select first_name, hire_date from employees where hire_date between date("1987-06-01") and date("1987-07-30");
++-------------+------------+
+| first_name  | hire_date  |
++-------------+------------+
+| Steven      | 1987-06-17 |
+| Neena       | 1987-06-18 |
+| Lex         | 1987-06-19 |
+| Alexander   | 1987-06-20 |
+| Bruce       | 1987-06-21 |
+| David       | 1987-06-22 |
+| Valli       | 1987-06-23 |
+| Diana       | 1987-06-24 |
+| Nancy       | 1987-06-25 |
+| Daniel      | 1987-06-26 |
+| John        | 1987-06-27 |
+| Ismael      | 1987-06-28 |
+| Jose Manuel | 1987-06-29 |
+| Luis        | 1987-06-30 |
+| Den         | 1987-07-01 |
+| Alexander   | 1987-07-02 |
+| Shelli      | 1987-07-03 |
+| Sigal       | 1987-07-04 |
+| Guy         | 1987-07-05 |
+| Karen       | 1987-07-06 |
+| Matthew     | 1987-07-07 |
+| Adam        | 1987-07-08 |
+| Payam       | 1987-07-09 |
+| Shanta      | 1987-07-10 |
+| Kevin       | 1987-07-11 |
+| Julia       | 1987-07-12 |
+| Irene       | 1987-07-13 |
+| James       | 1987-07-14 |
+| Steven      | 1987-07-15 |
+| Laura       | 1987-07-16 |
+| Mozhe       | 1987-07-17 |
+| James       | 1987-07-18 |
+| TJ          | 1987-07-19 |
+| Jason       | 1987-07-20 |
+| Michael     | 1987-07-21 |
+| Ki          | 1987-07-22 |
+| Hazel       | 1987-07-23 |
+| Renske      | 1987-07-24 |
+| Stephen     | 1987-07-25 |
+| John        | 1987-07-26 |
+| Joshua      | 1987-07-27 |
+| Trenna      | 1987-07-28 |
+| Curtis      | 1987-07-29 |
+| Randall     | 1987-07-30 |
++-------------+------------+
+44 rows in set (0.338 sec)
+
+
+10)
+
+
+MariaDB [hr]> select date_format(current_date(),"%d/%m/%Y") as 'Date';
++------------+
+| Date       |
++------------+
+| 21/03/2021 |
++------------+
+1 row in set (0.001 sec)
+
+
+11)
+
+
+MariaDB [hr]> select first_name, last_name from employees where month(hire_date) = 7;
++------------+-------------+
+| first_name | last_name   |
++------------+-------------+
+| Den        | Raphaely    |
+| Alexander  | Khoo        |
+| Shelli     | Baida       |
+| Sigal      | Tobias      |
+| Guy        | Himuro      |
+| Karen      | Colmenares  |
+| Matthew    | Weiss       |
+| Adam       | Fripp       |
+| Payam      | Kaufling    |
+| Shanta     | Vollman     |
+| Kevin      | Mourgos     |
+| Julia      | Nayer       |
+| Irene      | Mikkilineni |
+| James      | Landry      |
+| Steven     | Markle      |
+| Laura      | Bissot      |
+| Mozhe      | Atkinson    |
+| James      | Marlow      |
+| TJ         | Olson       |
+| Jason      | Mallin      |
+| Michael    | Rogers      |
+| Ki         | Gee         |
+| Hazel      | Philtanker  |
+| Renske     | Ladwig      |
+| Stephen    | Stiles      |
+| John       | Seo         |
+| Joshua     | Patel       |
+| Trenna     | Rajs        |
+| Curtis     | Davies      |
+| Randall    | Matos       |
+| Peter      | Vargas      |
++------------+-------------+
+31 rows in set (0.412 sec)
+
+
+12)
+
+MariaDB [hr]> select concat(email,"@IBA-SUK.EDU.PK") from employees;
++---------------------------------+
+| concat(email,"@IBA-SUK.EDU.PK") |
++---------------------------------+
+| ABANDA@IBA-SUK.EDU.PK           |
+| ABULL@IBA-SUK.EDU.PK            |
+| ACABRIO@IBA-SUK.EDU.PK          |
+| AERRAZUR@IBA-SUK.EDU.PK         |
+| AFRIPP@IBA-SUK.EDU.PK           |
+| AHUNOLD@IBA-SUK.EDU.PK          |
+| AHUTTON@IBA-SUK.EDU.PK          |
+| AKHOO@IBA-SUK.EDU.PK            |
+| AMCEWEN@IBA-SUK.EDU.PK          |
+| AWALSH@IBA-SUK.EDU.PK           |
+| BERNST@IBA-SUK.EDU.PK           |
+| BEVERETT@IBA-SUK.EDU.PK         |
+| CDAVIES@IBA-SUK.EDU.PK          |
+| CJOHNSON@IBA-SUK.EDU.PK         |
+| COLSEN@IBA-SUK.EDU.PK           |
+| CVISHNEY@IBA-SUK.EDU.PK         |
+| DAUSTIN@IBA-SUK.EDU.PK          |
+| DBERNSTE@IBA-SUK.EDU.PK         |
+| DFAVIET@IBA-SUK.EDU.PK          |
+| DGRANT@IBA-SUK.EDU.PK           |
+| DGREENE@IBA-SUK.EDU.PK          |
+| DLEE@IBA-SUK.EDU.PK             |
+| DLORENTZ@IBA-SUK.EDU.PK         |
+| DOCONNEL@IBA-SUK.EDU.PK         |
+| DRAPHEAL@IBA-SUK.EDU.PK         |
+| EABEL@IBA-SUK.EDU.PK            |
+| EBATES@IBA-SUK.EDU.PK           |
+| EZLOTKEY@IBA-SUK.EDU.PK         |
+| GCAMBRAU@IBA-SUK.EDU.PK         |
+| GGEONI@IBA-SUK.EDU.PK           |
+| GHIMURO@IBA-SUK.EDU.PK          |
+| HBAER@IBA-SUK.EDU.PK            |
+| HBLOOM@IBA-SUK.EDU.PK           |
+| HPHILTAN@IBA-SUK.EDU.PK         |
+| IMIKKILI@IBA-SUK.EDU.PK         |
+| ISCIARRA@IBA-SUK.EDU.PK         |
+| JAMRLOW@IBA-SUK.EDU.PK          |
+| JCHEN@IBA-SUK.EDU.PK            |
+| JDELLING@IBA-SUK.EDU.PK         |
+| JDILLY@IBA-SUK.EDU.PK           |
+| JFLEAUR@IBA-SUK.EDU.PK          |
+| JKING@IBA-SUK.EDU.PK            |
+| JLANDRY@IBA-SUK.EDU.PK          |
+| JLIVINGS@IBA-SUK.EDU.PK         |
+| JMALLIN@IBA-SUK.EDU.PK          |
+| JMURMAN@IBA-SUK.EDU.PK          |
+| JNAYER@IBA-SUK.EDU.PK           |
+| JPATEL@IBA-SUK.EDU.PK           |
+| JRUSSEL@IBA-SUK.EDU.PK          |
+| JSEO@IBA-SUK.EDU.PK             |
+| JTAYLOR@IBA-SUK.EDU.PK          |
+| JWHALEN@IBA-SUK.EDU.PK          |
+| KCHUNG@IBA-SUK.EDU.PK           |
+| KCOLMENA@IBA-SUK.EDU.PK         |
+| KFEENEY@IBA-SUK.EDU.PK          |
+| KGEE@IBA-SUK.EDU.PK             |
+| KGRANT@IBA-SUK.EDU.PK           |
+| KMOURGOS@IBA-SUK.EDU.PK         |
+| KPARTNER@IBA-SUK.EDU.PK         |
+| LBISSOT@IBA-SUK.EDU.PK          |
+| LDEHAAN@IBA-SUK.EDU.PK          |
+| LDORAN@IBA-SUK.EDU.PK           |
+| LOZER@IBA-SUK.EDU.PK            |
+| LPOPP@IBA-SUK.EDU.PK            |
+| LSMITH@IBA-SUK.EDU.PK           |
+| MATKINSO@IBA-SUK.EDU.PK         |
+| MHARTSTE@IBA-SUK.EDU.PK         |
+| MMARVINS@IBA-SUK.EDU.PK         |
+| MROGERS@IBA-SUK.EDU.PK          |
+| MSULLIVA@IBA-SUK.EDU.PK         |
+| MWEISS@IBA-SUK.EDU.PK           |
+| NCAMBRAU@IBA-SUK.EDU.PK         |
+| NGREENBE@IBA-SUK.EDU.PK         |
+| NKOCHHAR@IBA-SUK.EDU.PK         |
+| NSARCHAN@IBA-SUK.EDU.PK         |
+| OTUVAULT@IBA-SUK.EDU.PK         |
+| PFAY@IBA-SUK.EDU.PK             |
+| PHALL@IBA-SUK.EDU.PK            |
+| PKAUFLIN@IBA-SUK.EDU.PK         |
+| PSULLY@IBA-SUK.EDU.PK           |
+| PTUCKER@IBA-SUK.EDU.PK          |
+| PVARGAS@IBA-SUK.EDU.PK          |
+| RLADWIG@IBA-SUK.EDU.PK          |
+| RMATOS@IBA-SUK.EDU.PK           |
+| RPERKINS@IBA-SUK.EDU.PK         |
+| SANDE@IBA-SUK.EDU.PK            |
+| SBAIDA@IBA-SUK.EDU.PK           |
+| SBELL@IBA-SUK.EDU.PK            |
+| SHIGGINS@IBA-SUK.EDU.PK         |
+| SKING@IBA-SUK.EDU.PK            |
+| SKUMAR@IBA-SUK.EDU.PK           |
+| SMARKLE@IBA-SUK.EDU.PK          |
+| SMAVRIS@IBA-SUK.EDU.PK          |
+| SMCCAIN@IBA-SUK.EDU.PK          |
+| SSEWALL@IBA-SUK.EDU.PK          |
+| SSTILES@IBA-SUK.EDU.PK          |
+| STOBIAS@IBA-SUK.EDU.PK          |
+| SVOLLMAN@IBA-SUK.EDU.PK         |
+| TFOX@IBA-SUK.EDU.PK             |
+| TGATES@IBA-SUK.EDU.PK           |
+| TJOLSON@IBA-SUK.EDU.PK          |
+| TRAJS@IBA-SUK.EDU.PK            |
+| VJONES@IBA-SUK.EDU.PK           |
+| VPATABAL@IBA-SUK.EDU.PK         |
+| WGIETZ@IBA-SUK.EDU.PK           |
+| WSMITH@IBA-SUK.EDU.PK           |
+| WTAYLOR@IBA-SUK.EDU.PK          |
++---------------------------------+
+107 rows in set (0.001 sec)
+
+
+
+13)
+
+
+MariaDB [hr]> select employee_id, first_name, mid(hire_date,6,2) from employees;
++-------------+-------------+--------------------+
+| employee_id | first_name  | mid(hire_date,6,2) |
++-------------+-------------+--------------------+
+|         100 | Steven      | 06                 |
+|         101 | Neena       | 06                 |
+|         102 | Lex         | 06                 |
+|         103 | Alexander   | 06                 |
+|         104 | Bruce       | 06                 |
+|         105 | David       | 06                 |
+|         106 | Valli       | 06                 |
+|         107 | Diana       | 06                 |
+|         108 | Nancy       | 06                 |
+|         109 | Daniel      | 06                 |
+|         110 | John        | 06                 |
+|         111 | Ismael      | 06                 |
+|         112 | Jose Manuel | 06                 |
+|         113 | Luis        | 06                 |
+|         114 | Den         | 07                 |
+|         115 | Alexander   | 07                 |
+|         116 | Shelli      | 07                 |
+|         117 | Sigal       | 07                 |
+|         118 | Guy         | 07                 |
+|         119 | Karen       | 07                 |
+|         120 | Matthew     | 07                 |
+|         121 | Adam        | 07                 |
+|         122 | Payam       | 07                 |
+|         123 | Shanta      | 07                 |
+|         124 | Kevin       | 07                 |
+|         125 | Julia       | 07                 |
+|         126 | Irene       | 07                 |
+|         127 | James       | 07                 |
+|         128 | Steven      | 07                 |
+|         129 | Laura       | 07                 |
+|         130 | Mozhe       | 07                 |
+|         131 | James       | 07                 |
+|         132 | TJ          | 07                 |
+|         133 | Jason       | 07                 |
+|         134 | Michael     | 07                 |
+|         135 | Ki          | 07                 |
+|         136 | Hazel       | 07                 |
+|         137 | Renske      | 07                 |
+|         138 | Stephen     | 07                 |
+|         139 | John        | 07                 |
+|         140 | Joshua      | 07                 |
+|         141 | Trenna      | 07                 |
+|         142 | Curtis      | 07                 |
+|         143 | Randall     | 07                 |
+|         144 | Peter       | 07                 |
+|         145 | John        | 08                 |
+|         146 | Karen       | 08                 |
+|         147 | Alberto     | 08                 |
+|         148 | Gerald      | 08                 |
+|         149 | Eleni       | 08                 |
+|         150 | Peter       | 08                 |
+|         151 | David       | 08                 |
+|         152 | Peter       | 08                 |
+|         153 | Christopher | 08                 |
+|         154 | Nanette     | 08                 |
+|         155 | Oliver      | 08                 |
+|         156 | Janette     | 08                 |
+|         157 | Patrick     | 08                 |
+|         158 | Allan       | 08                 |
+|         159 | Lindsey     | 08                 |
+|         160 | Louise      | 08                 |
+|         161 | Sarath      | 08                 |
+|         162 | Clara       | 08                 |
+|         163 | Danielle    | 08                 |
+|         164 | Mattea      | 08                 |
+|         165 | David       | 08                 |
+|         166 | Sundar      | 08                 |
+|         167 | Amit        | 08                 |
+|         168 | Lisa        | 08                 |
+|         169 | Harrison    | 08                 |
+|         170 | Tayler      | 08                 |
+|         171 | William     | 08                 |
+|         172 | Elizabeth   | 08                 |
+|         173 | Sundita     | 08                 |
+|         174 | Ellen       | 08                 |
+|         175 | Alyssa      | 08                 |
+|         176 | Jonathon    | 09                 |
+|         177 | Jack        | 09                 |
+|         178 | Kimberely   | 09                 |
+|         179 | Charles     | 09                 |
+|         180 | Winston     | 09                 |
+|         181 | Jean        | 09                 |
+|         182 | Martha      | 09                 |
+|         183 | Girard      | 09                 |
+|         184 | Nandita     | 09                 |
+|         185 | Alexis      | 09                 |
+|         186 | Julia       | 09                 |
+|         187 | Anthony     | 09                 |
+|         188 | Kelly       | 09                 |
+|         189 | Jennifer    | 09                 |
+|         190 | Timothy     | 09                 |
+|         191 | Randall     | 09                 |
+|         192 | Sarah       | 09                 |
+|         193 | Britney     | 09                 |
+|         194 | Samuel      | 09                 |
+|         195 | Vance       | 09                 |
+|         196 | Alana       | 09                 |
+|         197 | Kevin       | 09                 |
+|         198 | Donald      | 09                 |
+|         199 | Douglas     | 09                 |
+|         200 | Jennifer    | 09                 |
+|         201 | Michael     | 09                 |
+|         202 | Pat         | 09                 |
+|         203 | Susan       | 09                 |
+|         204 | Hermann     | 09                 |
+|         205 | Shelley     | 09                 |
+|         206 | William     | 10                 |
++-------------+-------------+--------------------+
+107 rows in set (0.338 sec)
+
+
+
+14)
+
+
+
+MariaDB [hr]> select right(phone_number,4) from employees;
++-----------------------+
+| right(phone_number,4) |
++-----------------------+
+| 4567                  |
+| 4568                  |
+| 4569                  |
+| 4567                  |
+| 4568                  |
+| 4569                  |
+| 4560                  |
+| 5567                  |
+| 4569                  |
+| 4169                  |
+| 4269                  |
+| 4369                  |
+| 4469                  |
+| 4567                  |
+| 4561                  |
+| 4562                  |
+| 4563                  |
+| 4564                  |
+| 4565                  |
+| 4566                  |
+| 1234                  |
+| 2234                  |
+| 3234                  |
+| 4234                  |
+| 5234                  |
+| 1214                  |
+| 1224                  |
+| 1334                  |
+| 1434                  |
+| 5234                  |
+| 6234                  |
+| 7234                  |
+| 8234                  |
+| 1934                  |
+| 1834                  |
+| 1734                  |
+| 1634                  |
+| 1234                  |
+| 2034                  |
+| 2019                  |
+| 1834                  |
+| 8009                  |
+| 2994                  |
+| 2874                  |
+| 2004                  |
+| 9268                  |
+| 7268                  |
+| 9278                  |
+| 9268                  |
+| 9018                  |
+| 9268                  |
+| 5268                  |
+| 8968                  |
+| 8718                  |
+| 7668                  |
+| 6508                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9268                  |
+| 9267                  |
+| 9266                  |
+| 9265                  |
+| 9264                  |
+| 9263                  |
+| 9262                  |
+| 9876                  |
+| 9877                  |
+| 9878                  |
+| 9879                  |
+| 1876                  |
+| 2876                  |
+| 3876                  |
+| 4876                  |
+| 1876                  |
+| 2876                  |
+| 3876                  |
+| 4876                  |
+| 1876                  |
+| 2876                  |
+| 3876                  |
+| 4876                  |
+| 9811                  |
+| 9822                  |
+| 9833                  |
+| 9844                  |
+| 4444                  |
+| 5555                  |
+| 6666                  |
+| 7777                  |
+| 8888                  |
+| 8080                  |
+| 8181                  |
++-----------------------+
+107 rows in set (0.001 sec)
+
+
+
+15)
+
+
+MariaDB [hr]> select reverse(substr(reverse(street_address),1,instr(reverse(street_address)," "))) as "Last Word" from locations;
+
+
++---------------+
+| Last Word     |
++---------------+
+|  Rie          |
+|  Testa        |
+|  Shinjuku-ku  |
+|  Kamiya-cho   |
+|  Rd           |
+|  Blvd         |
+|  St           |
+|  Rd           |
+|  Ave          |
+|  St           |
+|  Laogianggen  |
+|  (E)          |
+|  Street       |
+|  North        |
+|  St           |
+|  Centre       |
+|  Road         |
+|  7031         |
+|  1360         |
+|  Corps-Saints |
+|  921          |
+|  837          |
+|  9991         |
++---------------+
+23 rows in set (0.001 sec)
+
+
+16)
+
+
+MariaDB [hr]> select min(street_address) from locations;
++---------------------+
+| min(street_address) |
++---------------------+
+| "Magdalen Centre    |
++---------------------+
+1 row in set (0.000 sec)
+
+
+17)
+
+MariaDB [hr]> select job_title from jobs where job_title like "_% _%";
++---------------------------------+
+| job_title                       |
++---------------------------------+
+| Administration Vice President   |
+| Administration Assistant        |
+| Finance Manager                 |
+| Accounting Manager              |
+| Public Accountant               |
+| Sales Manager                   |
+| Sales Representative            |
+| Purchasing Manager              |
+| Purchasing Clerk                |
+| Stock Manager                   |
+| Stock Clerk                     |
+| Shipping Clerk                  |
+| Marketing Manager               |
+| Marketing Representative        |
+| Human Resources Representative  |
+| Public Relations Representative |
++---------------------------------+
+16 rows in set (0.001 sec)
+
+
+18)
+
+
+MariaDB [hr]> select length(first_name) from employees where last_name like "__%c%";
++--------------------+
+| length(first_name) |
++--------------------+
+|                  5 |
+|                  6 |
+|                  7 |
+|                  5 |
++--------------------+
+4 rows in set (0.001 sec)
+
+
+
+
+
+
+

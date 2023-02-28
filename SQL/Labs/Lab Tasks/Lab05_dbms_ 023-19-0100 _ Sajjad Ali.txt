@@ -1,0 +1,64 @@
+1)
+
+SELECT first_name, last_name, e.department_id, department_name 
+FROM employees e 
+INNER JOIN departments d 
+USING (department_id);
+
+2)
+
+SELECT first_name, last_name, job_id, e.department_id, department_name 
+FROM employees e 
+INNER JOIN departments d 
+ON e.department_id = d.department_id 
+INNER JOIN locations l 
+ON d.location_id = l.location_id and city = "London";
+
+3)
+
+SELECT first_name, last_name, department_name, city, state_province 
+FROM employees e 
+INNER JOIN departments d 
+ON e.department_id = d.department_id 
+INNER JOIN locations l 
+ON d.location_id = l.location_id;
+
+4)
+
+SELECT a.employee_id, a.last_name, a.manager_id, b.last_name 
+FROM employees a, employees b 
+WHERE a.manager_id = b.employee_id; 
+
+5)
+
+SELECT a.first_name, a.last_name, a.hire_date 
+FROM employees a, employees b 
+WHERE  b.last_name = 'Jones' and a.hire_date > b.hire_date;
+
+6)
+
+SELECT department_name, count(employee_id) 
+FROM employees INNER JOIN departments 
+USING (department_id) 
+GROUP BY employees.department_id;
+
+7)
+
+SELECT d.department_id, department_name, b.first_name 
+FROM employees a 
+INNER JOIN departments d 
+USING (department_id) 
+INNER JOIN employees b 
+ON a.manager_id = b.employee_id;
+
+
+8)
+
+SELECT department_name, concat(b.first_name,' ',b.last_name) as name, city 
+FROM employees a 
+inner join employees b 
+on a.manager_id = b.employee_id 
+inner join departments d 
+on a.department_id = d.department_id 
+natural join locations;
+

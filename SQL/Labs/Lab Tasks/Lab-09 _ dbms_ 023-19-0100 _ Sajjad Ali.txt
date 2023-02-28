@@ -1,0 +1,33 @@
+1)	insert into projects (name, start_date, end_date) 
+	values 
+		('AI for Marketing','2019-08-01','2019-12-31'),
+		('ML for Sales','2019-05-15','2019-11-20'), ('CS for IT','2020-01-01','2020-05-20'),
+		('SQL for Input','2020-06-13','2020-11-20');
+
+	insert into student 
+	values 
+		('S100', 'Ali Muhammad', 'Administration', 'ali@iba-suk.edu.pk', '0333-8953311', 3), 
+		('S101', 'Manisha Kataria', 'Computer Science', 'manisha@iba-suk.edu.pk', '0345-111333444', 2), 
+		('S102', 'Sagar Sanjay', 'Engineering', 'sagar@iba-suk.edu.pk', '0300-22224454', 2), 
+		('S103', 'Sara Shaikh', 'IT', 'sara@iba-suk.edu.pk', '0300-1111110000', 3);
+		
+	create table if not exists projects_copy select * from projects;
+	
+2)	ALTER TABLE student ADD constraint project_id FOREIGN KEY(project_id) references projects(project_id) ON UPDATE CASCADE ON DELETE SET NULL;
+
+	delete from projects;
+	
+3)	insert into projects select * from projects_copy;
+
+4)	update projects set start_date='2023-02-01' where name = 'CS for IT';
+
+	ALTER TABLE projects
+	ADD cost INT;
+
+	ALTER TABLE student
+	ADD daysToComplete INT;	
+	
+5)	update projects set cost = 90000 where cost is null;
+
+6)	update student s left join projects p on s.project_id = p.project_id set daysToComplete = end_date - start_date;
+

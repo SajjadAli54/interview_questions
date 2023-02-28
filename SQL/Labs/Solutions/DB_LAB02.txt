@@ -1,0 +1,64 @@
+					---DATABASE SYSTEM---
+			LAB 02 Perform Arithmetic Operations & Querying Database Tables
+Name: M.KAMIL				SECTION-A				CMS ID: 021-19-0039
+====================================================================================================
+====================================================================================================
+Q#01:
+	MariaDB [hr]> SELECT EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY FROM employees wher
+e SALARY<3000;
+Q#02: 
+	MariaDB [hr]> SELECT FIRST_NAME,LAST_NAME FROM employees where FIRST_NAME LIKE '
+A%';
+Q#03:
+	MariaDB [hr]> SELECT FIRST_NAME,JOB_ID,DEPARTMENT_ID FROM employees WHERE EMPLOY
+EE_ID ='PU_CLERK' OR MANAGER_ID=114 ;
+Q#04: 
+	MariaDB [hr]> SELECT DEPARTMENT_ID,FIRST_NAME,SALARY FROM employees WHERE SALARY
+ BETWEEN 1500 AND 3000 ;
+Q#05: 
+	MariaDB [hr]> SELECT EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY FROM employees wher
+e COMMISSION_PCT IS NULL;
+Q#06: 
+	MariaDB [hr]> SELECT FIRST_NAME FROM  employees WHERE FIRST_NAME LIKE '%N';
+Q#07:
+	 MariaDB [hr]> SELECT FIRST_NAME,JOB_ID,DEPARTMENT_ID FROM employees WHERE EMPLOY
+EE_ID<>'PU_CLERK' ;
+Q#08: 
+	MariaDB [hr]> SELECT EMPLOYEE_ID,FIRST_NAME,SALARY FROM employees WHERE SALARY N
+OT IN(3300,3200,2200) ;
+Q#09: 
+	MariaDB [hr]> SELECT FIRST_NAME FROM employees WHERE FIRST_NAME LIKE'A%N';
+Q#10: 
+	MariaDB [hr]> SELECT FIRST_NAME,LAST_NAME FROM employees WHERE FIRST_NAME LIKE'%
+LA%' OR LAST_NAME LIKE'%LA%';
+Q#11: 
+	MariaDB [hr]> SELECT EMPLOYEE_ID,FIRST_NAME,SALARY FROM employees ORDER BY SALAR
+Y DESC;
+Q#12: 
+	MariaDB [hr]> SELECT FIRST_NAME FROM employees where FIRST_NAME LIKE'_a%';
+Q#13:
+	 MariaDB [hr]> SELECT EMPLOYEE_ID,FIRST_NAME,SALARY FROM employees WHERE SALARY N
+OT BETWEEN 1500 AND 3000 ;
+Q#14:
+	 MariaDB [hr]> SELECT FIRST_NAME,LAST_NAME,DEPARTMENT_ID FROM employees WHERE DEP
+ARTMENT_ID IN(30,100) ORDER BY  DEPARTMENT_ID ASC;
+Q#15:
+	 MariaDB [hr]> SELECT FIRST_NAME,LAST_NAME,SALARY FROM employees WHERE SALARY NOT
+ BETWEEN 10000 AND 15000 AND DEPARTMENT_ID IN(30,100);
+Q#16: 
+	MariaDB [hr]> SELECT FIRST_NAME,LAST_NAME,HIRE_DATE FROM employees where HIRE_DA
+TE=1987;
+Q#17: 
+	MariaDB [hr]> SELECT LAST_NAME FROM employees where LENGTH(LAST_NAME)=6;
+Q#18: 
+	MariaDB [hr]> SELECT FIRST_NAME,SALARY,SALARY*0.15 AS PF FROM employees ;
+Q#19:
+	MariaDB [hr]> SELECT FIRST_NAME,SALARY,(SALARY/SUM(SALARY))*100 AS COMMISSION FR
+OM employees;
+Q#20:
+	MariaDB [hr]> SELECT FIRST_NAME,SALARY,(SUM(SALARY)-500)AS NET_SALARY FROM emplo
+yees;      
+OR	MariaDB [hr]> SELECT FIRST_NAME,SALARY,SALARY-500 AS NET_SALARY FROM employees;
+==============================================================================================
+==============================================================================================
+
