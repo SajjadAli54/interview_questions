@@ -9,3 +9,5 @@
 - [MBS The Line](https://github.com/SajjadAli54/interview_questions/tree/main/Solutions/MBS_The_Line)
 
 - [Counting Valleys](https://github.com/SajjadAli54/interview_questions/tree/main/Solutions/Counting_Valley)
+
+- [OOP DS](https://github.com/SajjadAli54/interview_questions/tree/main/Solutions/OOP_DS)
