@@ -46,4 +46,11 @@ public class Position {
         setY(getY() + dy);
         setZ(getZ() + dz);
     }
+
+    public double findDistance(Position other) {
+        double dx = getX() - other.getX();
+        double dy = getY() - other.getY();
+        double dz = getZ() - other.getZ();
+        return Math.sqrt(dx * dx + dy * dy + dz * dz);
+    }
 }
