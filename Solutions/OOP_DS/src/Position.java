@@ -1,4 +1,5 @@
 public class Position {
+
     private double x;
     private double y;
     private double z;
@@ -14,7 +15,7 @@ public class Position {
     }
 
     public void setX(double x) {
-        this.x = format(x);
+        this.x = x;
     }
 
     public double getY() {
@@ -22,7 +23,7 @@ public class Position {
     }
 
     public void setY(double y) {
-        this.y = format(y);
+        this.y = y;
     }
 
     public double getZ() {
@@ -30,7 +31,7 @@ public class Position {
     }
 
     public void setZ(double z) {
-        this.z = format(z);
+        this.z = z;
     }
 
     /**
@@ -44,11 +45,5 @@ public class Position {
         setX(getX() + dx);
         setY(getY() + dy);
         setZ(getZ() + dz);
-    }
-
-    private double format(double value) {
-        if(value < -10) return -10;
-        if(value > 10) return 10;
-        return value;
     }
 }

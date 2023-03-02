@@ -1,6 +1,15 @@
-public class Snake extends Animal {
+public class Snake extends Animal{
     private double length;
     private boolean venomous;
+
+    public Snake() {
+        double x = Math.random() * 50 - 25;
+        double y = Math.random() * 50 - 25;
+        double z = 0;
+
+        Position position = new Position(x, y, z);
+        setPosition(position);
+    }
 
     public double getLength() {
         return length;
@@ -22,4 +31,6 @@ public class Snake extends Animal {
     public String toString() {
         return "Snake [length=" + length + ", venomous=" + venomous + ", toString()=" + super.toString() + "]";
     }
+
+  
 }
